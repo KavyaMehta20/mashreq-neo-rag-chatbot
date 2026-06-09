@@ -1,0 +1,80 @@
+{
+  "products": [
+    "NEO Current Account",
+    "NEO Simple Account",
+    "NEO PLUS Saver Account",
+    "NEO Savings Account",
+    "NEO NXT Account",
+    "NEO Debit Card",
+    "Mashreq noon Debit Card",
+    "Mashreq Solitaire Credit Card",
+    "Mashreq Platinum Plus Credit Card",
+    "Mashreq Cashback Credit Card",
+    "Mashreq noon Credit Card",
+    "NEO Current Account KFS",
+    "NEO Simple Account KFS",
+    "NEO NXT Digital Account KFS",
+    "Unified CASA KFS",
+    "Mashreq Cards KFS",
+    "General"
+  ],
+  "sections": [
+    "Product Overview",
+    "Benefits",
+    "Eligibility",
+    "Documents Required",
+    "Fees",
+    "Account Limits",
+    "Features",
+    "Key Facts Statement",
+    "Terms and Conditions"
+  ],
+  "product_types": [
+    "Account",
+    "Debit Card",
+    "Credit Card",
+    "KFS"
+  ],
+  "total_chunks": 63,
+  "product_counts": {
+    "NEO Current Account": 6,
+    "NEO Simple Account": 5,
+    "NEO PLUS Saver Account": 5,
+    "NEO Savings Account": 4,
+    "NEO NXT Account": 5,
+    "NEO Debit Card": 5,
+    "Mashreq noon Debit Card": 5,
+    "Mashreq Solitaire Credit Card": 6,
+    "Mashreq Platinum Plus Credit Card": 5,
+    "Mashreq Cashback Credit Card": 5,
+    "Mashreq noon Credit Card": 5,
+    "NEO Current Account KFS": 1,
+    "NEO Simple Account KFS": 1,
+    "NEO NXT Digital Account KFS": 1,
+    "Unified CASA KFS": 1,
+    "Mashreq Cards KFS": 1,
+    "General": 2
+  },
+  "section_counts": {
+    "Product Overview": 11,
+    "Benefits": 5,
+    "Eligibility": 11,
+    "Documents Required": 5,
+    "Fees": 11,
+    "Account Limits": 7,
+    "Features": 6,
+    "Key Facts Statement": 5,
+    "Terms and Conditions": 2
+  },
+  "product_type_counts": {
+    "Account": 27,
+    "Debit Card": 10,
+    "Credit Card": 21,
+    "KFS": 5
+  },
+  "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md",
+  "bank": "Mashreq Bank (Mashreqbank PSC)",
+  "regulator": "Central Bank of the United Arab Emirates",
+  "report_date": "June 2026",
+  "scope": "NEO Accounts, NEO Debit Cards, NEO Credit Cards"
+}

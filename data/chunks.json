@@ -1,0 +1,875 @@
+[
+  {
+    "chunk_id": "neo-current-001",
+    "product_type": "Current Account",
+    "product_name": "NEO Current Account",
+    "section": "Product Overview",
+    "subsection": "General",
+    "content": "The NEO Current Account is a 100% digital current account offered by Mashreq NEO in AED. It can be opened in approximately 2 minutes via the Mashreq Mobile App with no branch visit required. It comes with three tiers: NEO (standard), NEO PLUS, and NEO PLUS (Salary). Key features include a free mandatory Visa Debit Card, free first cheque book (additional leaves at AED 1 per leaf), access to global stock exchanges, fast remittances, and Term Deposits. Monthly e-statements are sent to the registered email. Transactions are viewable via Mashreq Mobile App, Online Banking, or ATM.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-current-002",
+    "product_type": "Current Account",
+    "product_name": "NEO Current Account",
+    "section": "Eligibility",
+    "subsection": "Eligibility Requirements",
+    "content": "Eligibility for the NEO Current Account (exact wording from KFS, January 2026): Valid Emirates ID and 18 years and above. Additional requirements: minimum monthly income of AED 5,000; UAE resident only — non-residents of the UAE are not permitted. Tier-specific balance or salary conditions: NEO (standard) tier requires a monthly average balance of AED 3,000 OR transfer of minimum salary of AED 5,000 to the NEO Current Account. NEO PLUS tier requires a monthly average balance of at least AED 50,000 across Mashreq accounts. NEO PLUS (Salary) tier requires a salary transfer of at least AED 10,000 every month to the NEO Account.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-current-003",
+    "product_type": "Current Account",
+    "product_name": "NEO Current Account",
+    "section": "Eligibility",
+    "subsection": "Age Requirements",
+    "content": "The NEO Current Account requires applicants to be 18 years of age or above. Minors under 18 are not eligible for the NEO Current Account. There is no upper age limit stated. This requirement is confirmed in the Key Facts Statement (January 2026): 'Eligibility criteria: Valid Emirates ID; 18 years and above.'",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-current-004",
+    "product_type": "Current Account",
+    "product_name": "NEO Current Account",
+    "section": "Eligibility",
+    "subsection": "Income Requirements",
+    "content": "The NEO Current Account requires a minimum monthly income of AED 5,000. Customers earning below AED 5,000 per month are directed to the NEO Simple Account instead. For the NEO (standard) tier, the customer must either maintain a monthly average balance of AED 3,000 OR transfer a minimum salary of AED 5,000 to the NEO Current Account. NEO PLUS (Salary) tier requires a salary transfer of at least AED 10,000 per month.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-current-005",
+    "product_type": "Current Account",
+    "product_name": "NEO Current Account",
+    "section": "Eligibility",
+    "subsection": "Residency Requirements",
+    "content": "The NEO Current Account is available to UAE residents only. Non-residents of the UAE are explicitly not permitted (exact wording from KFS). A valid UAE Emirates ID is required for account opening. The account cannot be opened by non-UAE residents.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-current-006",
+    "product_type": "Current Account",
+    "product_name": "NEO Current Account",
+    "section": "Required Documents",
+    "subsection": "Documentation",
+    "content": "Required documents for the NEO Current Account: (1) Valid Emirates ID — scanned via the Mashreq Mobile App; (2) Selfie — for digital onboarding and biometric verification. No branch visit is required. The account is opened entirely digitally through the app. No other documents are stated as mandatory in the official KFS (January 2026).",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-current-007",
+    "product_type": "Current Account",
+    "product_name": "NEO Current Account",
+    "section": "Fees and Charges",
+    "subsection": "Account Fees",
+    "content": "Fees and charges for the NEO Current Account: Account Opening Fee: AED 0 (free). Monthly/Fall-Below Fee (NEO tier): AED 21/month (inclusive of VAT), charged if balance is below AED 3,000 AND no salary of AED 5,000 or more is credited. From 1 April 2026, the fall-below fee increases to AED 26.25/month (inclusive of VAT). Account Closure Charges: AED 0. ATM Cash Withdrawal (UAE, GCC, International): AED 0 (free). Local and International Money Transfers: AED 0 (free). First cheque book: AED 0 (free); additional leaves: AED 1 per leaf. Teller/manned transactions are not allowed — digital-only model. For remaining charges, visit mashreq.com/soc.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-current-008",
+    "product_type": "Current Account",
+    "product_name": "NEO Current Account",
+    "section": "Minimum Balance",
+    "subsection": "Balance Requirements",
+    "content": "The NEO Current Account (NEO standard tier) requires a minimum monthly average balance of AED 3,000 OR a minimum salary transfer of AED 5,000. If the balance falls below AED 3,000 and no qualifying salary is credited, a fall-below fee of AED 21/month (AED 26.25/month from 1 April 2026) is charged. NEO PLUS tier requires at least AED 50,000 monthly average balance across all Mashreq accounts. NEO PLUS (Salary) tier requires a minimum monthly salary transfer of AED 10,000 — no minimum balance required in this case.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-current-009",
+    "product_type": "Current Account",
+    "product_name": "NEO Current Account",
+    "section": "Rewards",
+    "subsection": "Salary Transfer Cashback",
+    "content": "The NEO Current Account offers a salary transfer joining bonus (cashback) based on monthly salary credited. Applicable for accounts with first salary credited on or after 27 August 2023. Cashback tiers: AED 5,000–9,999/month salary: AED 200 cashback + AED 50 early bird cashback. AED 10,000–19,999/month: AED 500 + AED 250 early bird. AED 20,000–49,999/month: AED 1,000 + AED 500 early bird. AED 50,000 and above/month: AED 2,500 + AED 1,000 early bird. The early bird cashback is effective from 9 June 2024 and is credited to customers who transfer salary within the first 90 days of account opening. Maximum total joining bonus can reach AED 5,000.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-current-010",
+    "product_type": "Current Account",
+    "product_name": "NEO Current Account",
+    "section": "Account Features",
+    "subsection": "Spending and Withdrawal Limits",
+    "content": "Account limits for the NEO Current Account (from KFS January 2026): Debit Card Daily Cash Withdrawal: up to AED 20,000 / maximum 15 transactions. Debit Card Daily Purchase (Online): up to AED 100,000 / 20 transactions. Debit Card Daily Purchase (Offline/POS): up to AED 100,000 / 20 transactions. Note: The Unified CASA KFS (April 2026) states the daily purchase limit as AED 99,999 / 40 transactions — this is the more recently issued document and may take precedence. Cheque book issuance: maximum 2 cheque books (10 leaves each) in first 180 days; maximum 3 cheque books in days 181–365.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-simple-001",
+    "product_type": "Current Account",
+    "product_name": "NEO Simple Account",
+    "section": "Product Overview",
+    "subsection": "General",
+    "content": "The NEO Simple Account is a financial inclusion current account offering basic digital banking for lower-income customers. It provides essential banking services including digital banking access, everyday debit card, and money transfers. Key characteristics: no minimum balance required, debit card issued mandatorily, no cheque book facility, and no teller/manned transactions. Accounts with no transactions for 180 days from opening will be automatically closed. The product page is available in Hindi and Urdu, indicating this product is targeted at lower-income migrant workers. The page is intentionally excluded from search engines (noindex meta tag).",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-simple-002",
+    "product_type": "Current Account",
+    "product_name": "NEO Simple Account",
+    "section": "Eligibility",
+    "subsection": "Eligibility Requirements",
+    "content": "Eligibility for the NEO Simple Account (exact wording from KFS, April 2026): (a) Monthly salary below AED 5,000; (b) UAE resident with a valid Emirates ID; (c) Aged 18 years or above; (d) Customers must not hold any other current or savings account in the UAE. Non-residents of the UAE are not eligible. If a customer earns AED 5,000 or more per month, the NEO Current Account is recommended instead. This is a dedicated financial inclusion product for lower-income UAE residents.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-simple-003",
+    "product_type": "Current Account",
+    "product_name": "NEO Simple Account",
+    "section": "Eligibility",
+    "subsection": "Age Requirements",
+    "content": "The NEO Simple Account requires the applicant to be 18 years or above. Minors under 18 are not eligible. The account is for adults earning below AED 5,000 per month. There is no upper age limit stated.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-simple-004",
+    "product_type": "Current Account",
+    "product_name": "NEO Simple Account",
+    "section": "Eligibility",
+    "subsection": "Income Requirements",
+    "content": "The NEO Simple Account is specifically for customers with a monthly salary below AED 5,000. This is a mandatory eligibility condition, not optional. Customers with a monthly salary of AED 5,000 or more do not qualify and are directed to the NEO Current Account. Additionally, the applicant must not hold any other current or savings account in the UAE.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-simple-005",
+    "product_type": "Current Account",
+    "product_name": "NEO Simple Account",
+    "section": "Required Documents",
+    "subsection": "Documentation",
+    "content": "Required documents for the NEO Simple Account: (1) Valid Emirates ID (UAE resident). Only a valid Emirates ID is required for this account. The account is opened digitally.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-simple-006",
+    "product_type": "Current Account",
+    "product_name": "NEO Simple Account",
+    "section": "Fees and Charges",
+    "subsection": "Account Fees",
+    "content": "Fees and charges for the NEO Simple Account: Account Opening Fee: AED 0 (free). Minimum Balance Fee: None — no minimum balance required. Fall-Below Fee: Refer to Schedule of Charges (mashreq.com/soc). Account Closure: No charges. ATM Cash Withdrawals at UAE Mashreq ATMs: Up to 4 per calendar month free; charges apply from the 5th withdrawal onwards (per KFS April 2026). Pay Order: Not applicable. Cheque Book: Not applicable (no cheque book facility).",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-simple-007",
+    "product_type": "Current Account",
+    "product_name": "NEO Simple Account",
+    "section": "Account Features",
+    "subsection": "Spending and Withdrawal Limits",
+    "content": "Account limits for the NEO Simple Account (from KFS, April 2026): Debit Card Daily Cash Withdrawal: up to AED 5,000 / maximum 5 transactions per day. Debit Card Daily Purchases: up to AED 5,000 / maximum 5 transactions per day. Teller/Manned Transactions: not available. These limits are significantly lower than the NEO Current Account, reflecting the financial inclusion nature of this product.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-plus-saver-001",
+    "product_type": "Savings Account",
+    "product_name": "NEO PLUS Saver Account",
+    "section": "Product Overview",
+    "subsection": "General",
+    "content": "The NEO PLUS Saver Account is a high-yield AED savings account available exclusively to existing Mashreq NEO customers. It is a variant of the Easy Saver Account. Key features: earn 6.25% per annum when salary of AED 10,000 or more is transferred to a Mashreq NEO Account; earn 5% per annum by maintaining at least AED 50,000 monthly average balance. Interest is calculated on monthly average balance and credited monthly. Only 2 free debit transactions are allowed per month — exceeding 2 transactions in any month results in forfeiture of that month's interest. Interest is only earned on balances up to AED 500,000; funds above this threshold earn no interest. No cheque book, no standing instructions, no auto-debit, and no debit card issued with this account.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-plus-saver-002",
+    "product_type": "Savings Account",
+    "product_name": "NEO PLUS Saver Account",
+    "section": "Eligibility",
+    "subsection": "Eligibility Requirements",
+    "content": "Eligibility for the NEO PLUS Saver Account: Must be an existing active Mashreq NEO customer holding an active Mashreq NEO Account (Current or Savings). Only available for UAE residents. Not available for Gold and Private Banking customers. Cannot be opened as a joint account. Must be opened through the Mashreq Mobile App by existing NEO customers only. No minimum income requirement stated beyond what is needed for the qualifying NEO account. The account is not opened via branch or new customer application — existing NEO customers only.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-plus-saver-003",
+    "product_type": "Savings Account",
+    "product_name": "NEO PLUS Saver Account",
+    "section": "Interest Rates",
+    "subsection": "Savings Interest Rate",
+    "content": "Interest rates for the NEO PLUS Saver Account: 6.25% per annum — earned when a salary of AED 10,000 or more is transferred to a Mashreq NEO Account each month. 5% per annum — earned when monthly average balance of at least AED 50,000 is maintained (for customers unable to transfer salary). Interest is calculated on monthly average balance and credited monthly. Interest is only earned on balances up to AED 500,000. Balances above AED 500,000 earn no interest. Current interest rates are published at mashreq.com/NPIR. From 1 June 2026, the standard NEO Savings Account rate becomes 0%, but the NEO PLUS Saver rate remains as published on the NPIR page.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-plus-saver-004",
+    "product_type": "Savings Account",
+    "product_name": "NEO PLUS Saver Account",
+    "section": "Fees and Charges",
+    "subsection": "Account Fees",
+    "content": "Fees and charges for the NEO PLUS Saver Account: Account Opening Fee: AED 0 (free). Monthly Minimum Balance Fee: None. Fall-Below Fee: None. Account Closure: No fee stated; closed via app. No documents required for opening — existing NEO customers open it directly in-app.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-plus-saver-005",
+    "product_type": "Savings Account",
+    "product_name": "NEO PLUS Saver Account",
+    "section": "Account Features",
+    "subsection": "Transaction Limits",
+    "content": "Account limits for the NEO PLUS Saver Account: Maximum 2 free debit transactions per month without impacting interest payment. More than 2 debit transactions in any given month results in forfeiture of that entire month's interest. Maximum balance earning interest: AED 500,000. Funds above AED 500,000 earn no interest. No debit card is issued with this account. No cheque book, no standing instructions, no auto-debit. Cannot be used for international transfers directly.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-savings-001",
+    "product_type": "Savings Account",
+    "product_name": "NEO Savings Account",
+    "section": "Product Overview",
+    "subsection": "General",
+    "content": "The NEO Savings Account is a standard AED savings account with a free Visa Debit Card. It offers zero paperwork with fully digital account opening via the Mashreq Mobile App and access to funds in 200+ countries and 1.8 million ATMs via the debit card. Salary transfer cashback is also available (same table as the NEO Current Account). Customers transferring salary to the NEO Savings Account can also earn 6.25% p.a. with the NEO PLUS Saver Account. Interest rate: 0.15% per annum paid half-yearly (last payment after 30 June 2026). Effective 1 June 2026, the interest rate changes to 0% per annum.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-savings-002",
+    "product_type": "Savings Account",
+    "product_name": "NEO Savings Account",
+    "section": "Eligibility",
+    "subsection": "Eligibility Requirements",
+    "content": "Eligibility for the NEO Savings Account: Minimum monthly income of AED 5,000. Must be 18 years old and above. Valid Emirates ID required. UAE resident — non-residents are not permitted. Minimum average balance of AED 3,000 required (fall-below fee applies if not maintained).",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-savings-003",
+    "product_type": "Savings Account",
+    "product_name": "NEO Savings Account",
+    "section": "Required Documents",
+    "subsection": "Documentation",
+    "content": "Required documents for the NEO Savings Account: (1) Valid Emirates ID (scanned via app); (2) Selfie. No branch visit required.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-savings-004",
+    "product_type": "Savings Account",
+    "product_name": "NEO Savings Account",
+    "section": "Interest Rates",
+    "subsection": "Savings Interest Rate",
+    "content": "Interest rate for the NEO Savings Account: 0.15% per annum, paid half-yearly. The last interest payment will be made after 30 June 2026. Effective 1 June 2026, the interest rate changes to 0% per annum (per Unified CASA KFS, April 2026). Customers seeking a higher interest rate should consider the NEO PLUS Saver Account, which offers up to 6.25% p.a.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-savings-005",
+    "product_type": "Savings Account",
+    "product_name": "NEO Savings Account",
+    "section": "Fees and Charges",
+    "subsection": "Account Fees",
+    "content": "Fees for the NEO Savings Account: Account Opening Fee: AED 0 (free). Fall-Below Fee: charged if combined minimum average balance falls below AED 3,000. Account Closure: AED 0. ATM Cash Withdrawals (UAE, GCC, International): AED 0 (free). For full schedule of charges, visit mashreq.com/soc.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-savings-006",
+    "product_type": "Savings Account",
+    "product_name": "NEO Savings Account",
+    "section": "Account Features",
+    "subsection": "Spending and Withdrawal Limits",
+    "content": "Account limits for the NEO Savings Account (from Unified CASA KFS, April 2026): Debit Card Daily Cash Withdrawal: up to AED 20,000 / maximum 15 transactions. Debit Card Daily Purchase: up to AED 99,999 / maximum 40 transactions.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-savings-007",
+    "product_type": "Savings Account",
+    "product_name": "NEO Savings Account",
+    "section": "Rewards",
+    "subsection": "Salary Transfer Cashback",
+    "content": "The NEO Savings Account offers salary transfer cashback identical to the NEO Current Account. Cashback tiers based on monthly salary credited: AED 5,000–9,999: AED 200 cashback + AED 50 early bird cashback. AED 10,000–19,999: AED 500 + AED 250 early bird. AED 20,000–49,999: AED 1,000 + AED 500 early bird. AED 50,000 and above: AED 2,500 + AED 1,000 early bird. Total maximum joining bonus up to AED 3,500. Early bird cashback applies to customers who transfer salary within first 90 days of account opening.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-nxt-001",
+    "product_type": "Account",
+    "product_name": "NEO NXT Account",
+    "section": "Product Overview",
+    "subsection": "General",
+    "content": "The NEO NXT Account is a dedicated digital banking account for children aged 8–18 years, sometimes referred to as a kids or youth account. It is linked to the parent's Mashreq NEO Account. The child receives a dedicated Visa Debit Card and personalized Mashreq Mobile App access. The account is zero-fee with no interest, no cheque book, and no minimum balance. A parent can open up to 5 NEO NXT accounts. Cash deposits are strictly disabled; ATM cash withdrawals are allowed. When the child turns 18, they must open an independent account or the NEO NXT account is automatically closed after 60 days. A guaranteed AED 400 bonus is advertised for new NEO NXT account openings (T&Cs apply).",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-nxt-002",
+    "product_type": "Account",
+    "product_name": "NEO NXT Account",
+    "section": "Eligibility",
+    "subsection": "Eligibility Requirements",
+    "content": "Eligibility for the NEO NXT Account (exact wording from KFS): Parent/guardian should be an existing Mashreq customer; Child should have a valid Emirates ID; Child should be aged between 8 and 18 years. Additional requirements: Parent should be a UAE resident; Parent's Mashreq Account should be active. Non-residents of UAE are not permitted. No minimum balance required. No minimum income requirement for the child.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-nxt-003",
+    "product_type": "Account",
+    "product_name": "NEO NXT Account",
+    "section": "Eligibility",
+    "subsection": "Age Requirements",
+    "content": "The NEO NXT Account is specifically designed for children aged between 8 and 18 years. The minimum age is 8 years and the maximum is 18 years. A 16-year-old is eligible to open a NEO NXT Account provided their parent or guardian is an existing Mashreq customer with an active account and a UAE resident. When the child reaches 18, the account must be converted to an independent account or it will be automatically closed after 60 days.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-nxt-004",
+    "product_type": "Account",
+    "product_name": "NEO NXT Account",
+    "section": "Required Documents",
+    "subsection": "Documentation",
+    "content": "Required documents for the NEO NXT Account: (1) Child's valid Emirates ID; (2) Parent must be an existing active Mashreq customer — no additional documents are required for the parent if they are already an existing Mashreq customer.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-nxt-005",
+    "product_type": "Account",
+    "product_name": "NEO NXT Account",
+    "section": "Fees and Charges",
+    "subsection": "Account Fees",
+    "content": "Fees for the NEO NXT Account: Account Opening Fee: AED 0 (described in KFS as 'Free of charge Account'). Account Fee: AED 0. Account Closure: AED 0 ('No charges' per KFS). Interest: Not applicable. The NEO NXT Account is completely free of charges.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-nxt-006",
+    "product_type": "Account",
+    "product_name": "NEO NXT Account",
+    "section": "Parent Controls",
+    "subsection": "Parental Controls and Monitoring",
+    "content": "The NEO NXT Account includes comprehensive parental controls: Parent receives OTPs for all child's online transactions and money transfers. Parent can set monthly or weekly allowance for the child. Parent can set transaction controls including enabling or disabling merchants and setting spending limits. Parent can view all of the child's transactions in real time via the Mashreq Mobile App. Parent can open up to 5 NEO NXT accounts simultaneously.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-nxt-007",
+    "product_type": "Account",
+    "product_name": "NEO NXT Account",
+    "section": "Account Features",
+    "subsection": "Spending and Withdrawal Limits",
+    "content": "Account limits for the NEO NXT Account: Monthly limit for money transfers to Mashreq accounts: AED 5,000. Monthly limit for money transfers to non-Mashreq accounts: AED 5,000. Monthly limit for online debit card spending: AED 5,000. Monthly limit for offline debit card spending: AED 5,000. Monthly limit for ATM cash withdrawal: AED 5,000. Cash deposits are strictly disabled. Full limits available at mashreq.com/NXTlimits.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-nxt-008",
+    "product_type": "Account",
+    "product_name": "NEO NXT Account",
+    "section": "Promotions and Bonuses",
+    "subsection": "Welcome Bonus",
+    "content": "The NEO NXT Account offers a guaranteed AED 400 bonus for new account openings. Terms and conditions apply. No salary transfer cashback is available on the NEO NXT Account.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-nxt-009",
+    "product_type": "Account",
+    "product_name": "NEO NXT Account",
+    "section": "Terms and Conditions",
+    "subsection": "Account Maturity",
+    "content": "When the child account holder turns 18 years old, the NEO NXT Account is not automatically converted. The customer must open an independent account. If no action is taken, the NEO NXT Account is automatically closed after 60 days from the child's 18th birthday.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-nxt-010",
+    "product_type": "Debit Card",
+    "product_name": "NEO NXT Account",
+    "section": "Debit Card Features",
+    "subsection": "Card Included",
+    "content": "The NEO NXT Account includes a dedicated Visa Debit Card for the child. The card is issued as part of the account opening. The child also receives personalized Mashreq Mobile App access. Spending on the debit card is subject to monthly limits set by parents and the overall account monthly limits (AED 5,000 for online and offline purchases). ATM cash withdrawals are allowed (monthly limit AED 5,000). Cash deposits are strictly disabled.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "noon-savings-001",
+    "product_type": "Savings Account",
+    "product_name": "Mashreq noon Savings Account",
+    "section": "Product Overview",
+    "subsection": "General",
+    "content": "The Mashreq noon Savings Account is a savings account linked to the noon e-commerce ecosystem. It includes a Mashreq noon Debit Card (Visa). Minimum income required: AED 5,000/month. No minimum balance if salary of AED 5,000 or more is transferred. The account is opened digitally. Interest on deposits is available (rates published at separate document). The noon Savings Account also provides a noon VIP priority customer service experience.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "noon-savings-002",
+    "product_type": "Savings Account",
+    "product_name": "Mashreq noon Savings Account",
+    "section": "Eligibility",
+    "subsection": "Eligibility Requirements",
+    "content": "Eligibility for the Mashreq noon Savings Account: Minimum monthly income of AED 5,000. Age: 18 years and above; minors below 18 may apply along with a guardian. UAE resident. Valid Emirates ID required. The noon Debit Card is issued as part of this account.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-debit-001",
+    "product_type": "Debit Card",
+    "product_name": "NEO Debit Card",
+    "section": "Product Overview",
+    "subsection": "Card Overview",
+    "content": "The NEO Debit Card is a Visa Platinum debit card issued mandatorily with the NEO Current Account or NEO Savings Account upon digital account opening. It is not available as a standalone card — it is always issued alongside a qualifying NEO account. From the KFS (January 2026): 'Debit Card for NEO Current Account is issued mandatorily along with the digital account (as applicable) to allow access to funds post account opening.'",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-debit-002",
+    "product_type": "Debit Card",
+    "product_name": "NEO Debit Card",
+    "section": "Eligibility",
+    "subsection": "Eligibility Requirements",
+    "content": "Eligibility for the NEO Debit Card: Requires a NEO Current Account or NEO Savings Account (card is issued mandatorily at account opening). Age: 18 years and above. UAE resident. Valid Emirates ID required (same as account opening requirements). No separate application for the debit card is needed.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-debit-003",
+    "product_type": "Debit Card",
+    "product_name": "NEO Debit Card",
+    "section": "Debit Card Features",
+    "subsection": "Card Features",
+    "content": "Features of the NEO Debit Card (Visa Platinum): ATM access at Mashreq ATMs and worldwide ATMs. Accepted at 24+ million retail outlets globally. Contactless (NFC) enabled. Supports Apple Pay, Google Pay, and Samsung Pay (digital wallets). Visa Platinum member benefits including purchase protection, and medical and legal referral services. Early bird cashback: 5% on digital wallet enrollment (up to AED 200, within first 90 days). Note: Mashreq Vantage Points earning on debit card transactions was discontinued effective 1 September 2024; previously earned points remain redeemable.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-debit-004",
+    "product_type": "Debit Card",
+    "product_name": "NEO Debit Card",
+    "section": "Fees and Charges",
+    "subsection": "Card Fees",
+    "content": "Fees and charges for the NEO Debit Card: Issuance Fee: AED 0 (free with account). Annual Fee: AED 0 (free). ATM Withdrawal (UAE): AED 0 (free). ATM Withdrawal (GCC): AED 0 (free). ATM Withdrawal (International): AED 0 (free). Foreign Transaction Fee: refer to Schedule of Charges at mashreq.com/soc. Card Replacement Fee: refer to Schedule of Charges at mashreq.com/soc.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "neo-debit-005",
+    "product_type": "Debit Card",
+    "product_name": "NEO Debit Card",
+    "section": "Spending Limits",
+    "subsection": "Daily Limits",
+    "content": "Daily limits for the NEO Debit Card: Daily Cash Withdrawal: up to AED 20,000 / maximum 15 transactions. Daily Purchase (Online, per KFS January 2026): up to AED 100,000 / 20 transactions. Daily Purchase (Offline/POS, per KFS January 2026): up to AED 100,000 / 20 transactions. Per Unified CASA KFS (April 2026, more recent): Daily Purchase up to AED 99,999 / 40 transactions. The Unified CASA KFS (April 2026) is the more recently issued document and takes precedence.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "noon-debit-001",
+    "product_type": "Debit Card",
+    "product_name": "Mashreq noon Debit Card",
+    "section": "Product Overview",
+    "subsection": "Card Overview",
+    "content": "The Mashreq noon Debit Card is a Visa debit card issued as part of the Mashreq noon Savings Account. It is not a standalone card — it is bundled with the noon Savings Account. The card provides access to worldwide ATMs and is accepted for international purchases. It includes cashback rewards specific to the noon e-commerce ecosystem.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "noon-debit-002",
+    "product_type": "Debit Card",
+    "product_name": "Mashreq noon Debit Card",
+    "section": "Eligibility",
+    "subsection": "Eligibility Requirements",
+    "content": "Eligibility for the Mashreq noon Debit Card: Requires a Mashreq noon Savings Account. Age: 18 years and above; minors below 18 may apply along with a guardian. UAE resident. Valid Emirates ID required. Minimum monthly income: AED 5,000.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "noon-debit-003",
+    "product_type": "Debit Card",
+    "product_name": "Mashreq noon Debit Card",
+    "section": "Cashback",
+    "subsection": "Cashback Rates",
+    "content": "Cashback on the Mashreq noon Debit Card: 2% cashback on purchases made at noon.com and NowNow via the Mashreq noon Debit Card. 0.10% cashback on all other purchase transactions. Cashback is credited as noon pay wallet credits. Rewards are redeemable on noon orders and noon merchant partners.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "noon-debit-004",
+    "product_type": "Debit Card",
+    "product_name": "Mashreq noon Debit Card",
+    "section": "Fees and Charges",
+    "subsection": "Card Fees",
+    "content": "Fees for the Mashreq noon Debit Card: Account Opening/Card Fee: AED 0 (no minimum balance required if salary is AED 5,000 or more). Annual Card Fee: AED 0 (free). Fall-Below Fee: None stated for noon Savings Account.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "noon-debit-005",
+    "product_type": "Debit Card",
+    "product_name": "Mashreq noon Debit Card",
+    "section": "Spending Limits",
+    "subsection": "Daily Limits",
+    "content": "Daily limits for the Mashreq noon Debit Card (from Unified CASA KFS, April 2026, NEO Segment): Daily Cash Withdrawal: up to AED 20,000 / maximum 15 transactions. Daily Purchase: up to AED 99,999 / maximum 40 transactions.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "solitaire-cc-001",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Solitaire Credit Card",
+    "section": "Product Overview",
+    "subsection": "General",
+    "content": "The Mashreq Solitaire Credit Card is a premium Visa credit card positioned as a lifestyle card for affluent customers. It offers comprehensive travel, fitness, golf, and dining benefits. Annual Fee (Primary): AED 1,575 inclusive of VAT. Annual Fee (Supplementary): AED 630 inclusive of VAT. It is the highest-tier NEO credit card with the highest minimum income requirement of AED 25,000 per month.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "solitaire-cc-002",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Solitaire Credit Card",
+    "section": "Eligibility",
+    "subsection": "Eligibility Requirements",
+    "content": "Eligibility for the Mashreq Solitaire Credit Card: Minimum monthly income: AED 25,000 (from FAQ on product page: 'Your monthly income should be a minimum of AED 25,000.'). Minimum age: 18 years and above. UAE resident. Valid Emirates ID required. UAE-based employment is implied via the salary requirement.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "solitaire-cc-003",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Solitaire Credit Card",
+    "section": "Eligibility",
+    "subsection": "Income Requirements",
+    "content": "The Mashreq Solitaire Credit Card requires a minimum monthly income of AED 25,000. This is the highest income requirement among all NEO credit cards. The Platinum Plus, Cashback, and noon credit cards require only AED 5,000 per month minimum income.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "solitaire-cc-004",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Solitaire Credit Card",
+    "section": "Required Documents",
+    "subsection": "Documentation",
+    "content": "Required documents for the Mashreq Solitaire Credit Card: Valid Emirates ID; Application form or digital consent. These are the general credit card document requirements as stated in the KFS.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "solitaire-cc-005",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Solitaire Credit Card",
+    "section": "Rewards",
+    "subsection": "Mashreq Vantage Points",
+    "content": "Rewards structure for the Mashreq Solitaire Credit Card (Mashreq Vantage Points): 6 points per AED 1 on international purchases. 4 points per AED 1 on airlines, hotels, and travel. 2 points per AED 1 on other UAE (local) spends. 1 point per AED 1 on government payments, utilities, fuel, education, charity, rental, and telecom. Points can be redeemed for airmiles, gift cards, or cashback via the Mashreq Mobile App or partner merchants.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "solitaire-cc-006",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Solitaire Credit Card",
+    "section": "Benefits",
+    "subsection": "Travel and Lifestyle Benefits",
+    "content": "Benefits of the Mashreq Solitaire Credit Card: Airport Lounge Access: 1,000+ lounges worldwide; 12 complimentary visits/year with at least 1 international transaction over USD 1/year; 2 visits/year if spend criteria not met. Complimentary Valet Parking: 2 free uses per billing cycle in Dubai and Abu Dhabi (requires AED 10,000 minimum spend in previous billing cycle). Fitness First Access: unlimited complimentary visits (requires AED 10,000 minimum spend). Airport Transfers: 6 complimentary per calendar year at Dubai International Airport and Abu Dhabi Airport (requires AED 10,000 minimum spend). Golf Benefits: complimentary rounds at Arabian Ranches, Abu Dhabi Golf Club, The Track Meydan, The Els Club, Jebel Ali Golf Club; max 2 weekend games; requires AED 10,000 minimum spend. Marhaba Meet & Greet: 6 complimentary per year (requires AED 10,000 minimum spend). Travel Insurance: multi-trip insurance covering local and international trips up to 90 days; activated when travel tickets are purchased with the Solitaire card. Car Assistance: 1 complimentary vehicle registration pick-up/drop-off per year; 2 complimentary vehicle servicing pick-up/drop-offs per year (requires AED 10,000 minimum spend). Movie Discount: 50% off 8 tickets/month at VOX, Reel, Novo Cinemas; 50% off 8 tickets/month at Cinepolis until 31 December 2026.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "solitaire-cc-007",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Solitaire Credit Card",
+    "section": "Promotions and Bonuses",
+    "subsection": "Welcome Bonus",
+    "content": "Welcome bonus for the Mashreq Solitaire Credit Card: New customers: AED 2,500 when spending AED 9,000 or more within the first 2 months of card issuance. Existing customers: AED 500 when spending AED 9,000 or more within the first 2 months. T&Cs apply — refer to welcome offer terms document.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "solitaire-cc-008",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Solitaire Credit Card",
+    "section": "Fees and Charges",
+    "subsection": "Credit Card Fees",
+    "content": "Fees and charges for the Mashreq Solitaire Credit Card (from KFS, effective 13 June 2026): Annual Fee (Primary): AED 1,575 (inclusive of VAT). Annual Fee (Supplementary): AED 630 (inclusive of VAT). Interest Rate (Retail): 3.85% per month = 46.20% per annum. Interest Rate (Cash): 46.20% per annum (fixed). Interest-Free Period: up to 57 days. Late Payment Fee: AED 241.50 (inclusive of VAT). Cash Advance Fee: 3.15% or AED 210, whichever is higher (inclusive of VAT). Card Replacement Fee: AED 78.80 (inclusive of VAT). Over-Limit Fee: AED 303.45 (inclusive of VAT). Foreign Transaction Spread (non-AED): 2.89% (plus Visa charges). Foreign Transaction Spread (AED outside UAE): 2.89%. Early Installment Cancellation: AED 262.50 (inclusive of VAT). PayProtect Insurance: 1.04% of outstanding amount (inclusive of VAT). Minimum Monthly Payment: 5% of monthly statement balance.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "platinum-plus-cc-001",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Platinum Plus Credit Card",
+    "section": "Product Overview",
+    "subsection": "General",
+    "content": "The Mashreq Platinum Plus Credit Card is a Visa Platinum everyday rewards card focused on supermarket, fuel, and dining rewards. Annual Fee (Primary): AED 299 + 5% VAT = AED 313.95 (per product page FAQ). Annual Fee (Supplementary): Free for life. Note: The KFS (effective 13 June 2026) lists a 'Platinum Elite' annual fee of AED 682.50 (inclusive of VAT); this may refer to an older tier. The product page FAQ (AED 299 + VAT) is considered the most operationally current source for the Platinum Plus fee.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "platinum-plus-cc-002",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Platinum Plus Credit Card",
+    "section": "Eligibility",
+    "subsection": "Eligibility Requirements",
+    "content": "Eligibility for the Mashreq Platinum Plus Credit Card: Minimum monthly income: AED 5,000 (from FAQ: 'Your monthly income should be a minimum of AED 5,000.'). Minimum age: 18 years and above. UAE resident. Valid Emirates ID required. Can apply in minutes with Emirates ID via digital channel.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "platinum-plus-cc-003",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Platinum Plus Credit Card",
+    "section": "Eligibility",
+    "subsection": "Income Requirements",
+    "content": "The Mashreq Platinum Plus Credit Card requires a minimum monthly income of AED 5,000. This is the same minimum income threshold as the Cashback and noon credit cards. This is significantly lower than the Solitaire Credit Card which requires AED 25,000/month.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "platinum-plus-cc-004",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Platinum Plus Credit Card",
+    "section": "Rewards",
+    "subsection": "Mashreq Vantage Points",
+    "content": "Rewards structure for the Mashreq Platinum Plus Credit Card (Mashreq Vantage Points): 10 points per AED 1 on supermarket, fuel, and dining spends. 2 points per AED 1 on international spends and other local spends. 1 point per AED 1 on government payments, utilities, education, charity, rental, and telecom (this rate changes to 0.5 points per AED effective 13 June 2026). Points can be redeemed via the Mashreq Mobile App.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "platinum-plus-cc-005",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Platinum Plus Credit Card",
+    "section": "Benefits",
+    "subsection": "Card Benefits",
+    "content": "Benefits of the Mashreq Platinum Plus Credit Card: Airport Lounge Access: 4 complimentary visits per year (requires AED 7,000 or more monthly spend in the previous billing cycle). Movie Discounts: 50% off 4 tickets/month at VOX, Reel, Novo Cinemas; 50% off 8 tickets/month at Cinepolis until 31 December 2026. Make My Trip (MMT) Flights: 10% instant discount (up to AED 80) plus 10% MMT wallet reward (up to AED 80); minimum spend AED 600; coupon code MASHREQPP. Make My Trip (MMT) Hotels: 15% instant discount (up to AED 300) plus 15% MMT wallet reward (up to AED 300); minimum spend AED 300; coupon code MASHREQPP. Easy Payment Plan and Digital Wallet supported.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "platinum-plus-cc-006",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Platinum Plus Credit Card",
+    "section": "Promotions and Bonuses",
+    "subsection": "Welcome Bonus",
+    "content": "Welcome bonus for the Mashreq Platinum Plus Credit Card: New customers: AED 750 when spending AED 5,000 or more within the first 2 months. Existing customers: AED 200 when spending AED 5,000 or more within the first 2 months.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "platinum-plus-cc-007",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Platinum Plus Credit Card",
+    "section": "Fees and Charges",
+    "subsection": "Credit Card Fees",
+    "content": "Fees for the Mashreq Platinum Plus Credit Card: Annual Fee (Primary): AED 299 + 5% VAT = approximately AED 313.95 (per product page FAQ). Annual Fee (Supplementary): Free for life. Interest Rate (Retail and Cash): 3.85% per month / 46.20% per annum. Interest-Free Period: up to 57 days. Late Payment Fee: AED 241.50 (inclusive of VAT). Cash Advance Fee: 3.15% or AED 210, whichever is higher (inclusive of VAT). Card Replacement Fee: AED 78.80 (inclusive of VAT). Over-Limit Fee: AED 303.45 (inclusive of VAT). Foreign Transaction Spread: 2.89%. PayProtect: 0.99% of monthly statement balance plus 5% VAT.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cashback-cc-001",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Cashback Credit Card",
+    "section": "Product Overview",
+    "subsection": "General",
+    "content": "The Mashreq Cashback Credit Card is a Visa everyday cashback card with no annual fee (free for life for both primary and supplementary cards). It is positioned as an everyday cashback card. Cashback is earned on dining, international, and local purchases. The card offers 5% cashback on dining (local and international), 1% on other spends, and reduced rates on government/utility payments.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cashback-cc-002",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Cashback Credit Card",
+    "section": "Eligibility",
+    "subsection": "Eligibility Requirements",
+    "content": "Eligibility for the Mashreq Cashback Credit Card: Minimum monthly income: AED 5,000 (from FAQ: 'Your monthly income should be a minimum of AED 5,000.'). Minimum age: 18 years and above. UAE resident. Valid Emirates ID required.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cashback-cc-003",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Cashback Credit Card",
+    "section": "Cashback",
+    "subsection": "Cashback Rates",
+    "content": "Cashback rates for the Mashreq Cashback Credit Card: 5% cashback on international AND local dining (at merchants configured as restaurants, including online food delivery). 1% on other international spends. Up to 1% on other local spends in UAE. 0.33% on government payments, utilities, education, charity, fuel, rental, and telecom (this rate changes to 0.15% effective 13 June 2026). Cashback is credited to the card account within 2–3 working days of the qualifying transaction posting. Minimum redemption: AED 100 cashback balance. Cashback validity: 36 months from date of earning. Forfeiture conditions: no earning or redemption in 12 months, or delinquent account.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cashback-cc-004",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Cashback Credit Card",
+    "section": "Cashback",
+    "subsection": "Cashback Exclusions",
+    "content": "Cashback is NOT applicable on the Mashreq Cashback Credit Card for: Balance transfers, local cash advances, credit card cheques, finance charges, and bank fees. Transactions reversed by merchants. Utility bill payments made through Bank's payment channels (Call Center, Mashreq Online, ATM, Mobile Banking, Branches). Bill payments via Mashreq Mobile App or Online Banking.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cashback-cc-005",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Cashback Credit Card",
+    "section": "Benefits",
+    "subsection": "Card Benefits",
+    "content": "Benefits of the Mashreq Cashback Credit Card: Movie Discounts: 50% off at Cinepolis (Deluxe-Plus seats), up to 8 tickets/month until 31 December 2026. Visa MENA Offers: 2-for-1 deals via Entertainer; 5,000+ travel discounts. DragonFly and Dine Program: dining discounts via Dine & Fly app. Acquisition Offer: 20% cashback for the first 4 months on Netflix, Talabat, and Careem (maximum AED 50 per merchant per month). Easy Payment Plan and Digital Wallet supported. Cashback is redeemable via Mashreq Mobile App or Online Banking.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cashback-cc-006",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Cashback Credit Card",
+    "section": "Promotions and Bonuses",
+    "subsection": "Welcome Bonus",
+    "content": "Welcome bonus for the Mashreq Cashback Credit Card: New customers: AED 500 when spending AED 5,000 or more within the first 2 months. Existing customers: AED 100 when spending AED 5,000 or more within the first 2 months.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cashback-cc-007",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq Cashback Credit Card",
+    "section": "Fees and Charges",
+    "subsection": "Credit Card Fees",
+    "content": "Fees for the Mashreq Cashback Credit Card: Annual Fee (Primary): Free for life (AED 0). Annual Fee (Supplementary): Free for life (AED 0). Interest Rate: 3.85% per month / 46.20% per annum. Interest-Free Period: up to 57 days. Minimum Monthly Payment: 5% of monthly statement balance. Late Payment Fee: AED 241.50 (inclusive of VAT). Cash Advance Fee: 3.15% or AED 210, whichever is higher. Card Replacement Fee: AED 78.80. Over-Limit Fee: AED 303.45. Foreign Transaction Spread: 2.89%. PayProtect: 0.99% of monthly statement balance plus 5% VAT.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "noon-cc-001",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq noon Credit Card",
+    "section": "Product Overview",
+    "subsection": "General",
+    "content": "The Mashreq noon Credit Card is a Visa standard credit card free for life (no annual fee for primary and supplementary). It is positioned as an e-commerce and noon ecosystem cashback card. The card comes pre-activated — customers receive an instant digital card with no need to wait for physical delivery. It automatically grants a noon Membership on the day after card activation. The card earns cashback stored in the noon pay wallet, redeemable at noon, SIVVI, noon Food, and noon Minutes at checkout.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "noon-cc-002",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq noon Credit Card",
+    "section": "Eligibility",
+    "subsection": "Eligibility Requirements",
+    "content": "Eligibility for the Mashreq noon Credit Card: Minimum monthly income: AED 5,000 (inferred from standard NEO credit card criteria; not explicitly stated on noon card product page but consistent with other NEO credit cards). Minimum age: 18 years and above. UAE resident. Valid Emirates ID required.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "noon-cc-003",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq noon Credit Card",
+    "section": "Cashback",
+    "subsection": "Cashback Rates",
+    "content": "Cashback rates for the Mashreq noon Credit Card: 5% cashback on noon, noon Food, and noon Minutes. 5% cashback on noon supermall, NowNow, and Namshi. 1% cashback on all other purchases. 0.33% cashback on government payments, utilities, education, charity, fuel, rental, and telecom. Cashback is earned and stored in the noon pay wallet. Redeemable at noon, SIVVI, noon Food, and noon Minutes at checkout. Cashback is capped on spends within the assigned credit limit.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "noon-cc-004",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq noon Credit Card",
+    "section": "Cashback",
+    "subsection": "Cashback Exclusions",
+    "content": "Cashback is NOT applicable on the Mashreq noon Credit Card for: Easy Cash, balance transfers, local cash advances, credit card cheques, finance charges, and bank fees. Transactions reversed by merchants. Utility bill payments via Bank's payment channels (Call Center, Mashreq Online, ATM, Mobile Banking, Branches).",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "noon-cc-005",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq noon Credit Card",
+    "section": "Benefits",
+    "subsection": "Card Benefits",
+    "content": "Benefits of the Mashreq noon Credit Card: Free Delivery: unlimited free next-day delivery on all noon Express orders. noon Membership: automatic noon Membership granted the day after card activation. Priority Customer Service: noon VIP priority service. Instant Digital Card: card is pre-activated; no waiting for physical delivery. Movie Discounts: 50% off at Cinepolis (Deluxe-Plus seats), up to 8 tickets/month until 31 December 2026. Easy Payment Plan and Digital Wallet supported.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "noon-cc-006",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq noon Credit Card",
+    "section": "Promotions and Bonuses",
+    "subsection": "Welcome Bonus",
+    "content": "Welcome bonus for the Mashreq noon Credit Card: New customers: AED 500 when spending AED 5,000 or more within the first 2 months. Existing customers: AED 100 when spending AED 5,000 or more within the first 2 months.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "noon-cc-007",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq noon Credit Card",
+    "section": "Fees and Charges",
+    "subsection": "Credit Card Fees",
+    "content": "Fees for the Mashreq noon Credit Card: Annual Fee (Primary): Free for life (AED 0). Annual Fee (Supplementary): Free for life (AED 0). Interest Rate: 3.85% per month / 46.20% per annum. Interest-Free Period: up to 57 days. Late Payment Fee: AED 241.50. Cash Advance Fee: 3.15% or AED 210, whichever is higher. Card Replacement Fee: AED 78.80. Over-Limit Fee: AED 303.45. Foreign Transaction Spread: 2.89%. PayProtect: 0.99% of monthly statement balance.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cross-product-001",
+    "product_type": "Account",
+    "product_name": "Mashreq NEO Product Range",
+    "section": "Product Overview",
+    "subsection": "Products for Minors and Children",
+    "content": "Mashreq NEO offers one dedicated account for minors: the NEO NXT Account, designed for children aged 8 to 18 years. It requires the parent or guardian to be an existing active Mashreq customer and a UAE resident. The child must have a valid Emirates ID. Additionally, the Mashreq noon Savings Account permits minors below 18 to apply along with a guardian. All other NEO accounts (NEO Current, NEO Simple, NEO PLUS Saver, NEO Savings) require the applicant to be 18 years or above.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cross-product-002",
+    "product_type": "Account",
+    "product_name": "Mashreq NEO Product Range",
+    "section": "Eligibility",
+    "subsection": "Which Cards Require AED 5,000 Minimum Salary",
+    "content": "The following Mashreq NEO products require a minimum monthly income of AED 5,000: NEO Current Account (AED 5,000/month minimum salary for NEO standard tier), NEO Savings Account (AED 5,000/month minimum income), Mashreq noon Savings Account (AED 5,000/month minimum income), Mashreq Platinum Plus Credit Card (AED 5,000/month minimum income), Mashreq Cashback Credit Card (AED 5,000/month minimum income), Mashreq noon Credit Card (AED 5,000/month minimum income, inferred). The Mashreq Solitaire Credit Card requires a higher minimum income of AED 25,000/month. The NEO Simple Account is for customers earning below AED 5,000/month.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cross-product-003",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq NEO Product Range",
+    "section": "Cashback",
+    "subsection": "Which Products Offer Cashback",
+    "content": "Mashreq NEO products offering cashback: Mashreq Cashback Credit Card: 5% on dining, 1% on other international/local, 0.33% on utilities (drops to 0.15% from 13 June 2026). Mashreq noon Credit Card: 5% on noon ecosystem, 1% on all other purchases, 0.33% on utilities. Mashreq noon Debit Card: 2% cashback on noon.com and NowNow; 0.10% on all other purchases. NEO Current Account: salary transfer joining bonus up to AED 3,500 (not ongoing cashback). NEO Debit Card: Vantage Points earning discontinued from 1 September 2024. The Solitaire and Platinum Plus credit cards earn Vantage Points, not direct cashback.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cross-product-004",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq NEO Product Range",
+    "section": "Fees and Charges",
+    "subsection": "Annual Fees Comparison",
+    "content": "Annual fees for all NEO credit cards: Mashreq Solitaire Credit Card: AED 1,575 (primary, inclusive of VAT); AED 630 (supplementary, inclusive of VAT). Mashreq Platinum Plus Credit Card: AED 299 + 5% VAT (primary, per product page FAQ); supplementary is free for life. Mashreq Cashback Credit Card: Free for life (both primary and supplementary). Mashreq noon Credit Card: Free for life (both primary and supplementary).",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cross-product-005",
+    "product_type": "Account",
+    "product_name": "Mashreq NEO Product Range",
+    "section": "Account Features",
+    "subsection": "Accounts Without Minimum Balance",
+    "content": "NEO accounts with no minimum balance requirement: NEO Simple Account: no minimum balance. NEO PLUS Saver Account: no minimum balance requirement (but AED 50,000 needed to earn 5% interest). NEO NXT Account: no minimum balance. Accounts that require a minimum balance: NEO Current Account: AED 3,000 monthly average (or salary AED 5,000+). NEO Savings Account: AED 3,000 monthly average.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cross-product-006",
+    "product_type": "Account",
+    "product_name": "Mashreq NEO Product Range",
+    "section": "Interest Rates",
+    "subsection": "Interest Rates Across Products",
+    "content": "Interest rates across Mashreq NEO accounts: NEO PLUS Saver Account: 6.25% per annum (with AED 10,000+ salary transfer) or 5% per annum (with AED 50,000 average balance). NEO Savings Account: 0.15% per annum paid half-yearly; effective 1 June 2026 the rate changes to 0% per annum. NEO Current Account: 0% (current account, no interest). NEO Simple Account: 0%. NEO NXT Account: 0% (no interest). For credit cards, all four NEO credit cards charge 3.85% per month / 46.20% per annum on outstanding balances.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cross-product-007",
+    "product_type": "Account",
+    "product_name": "Mashreq NEO Product Range",
+    "section": "Terms and Conditions",
+    "subsection": "Cooling-Off Period",
+    "content": "All Mashreq NEO accounts carry a 5 business day cooling-off period, as required by the UAE Central Bank Consumer Protection Regulation (Circular No. 8 – 2020). This is stated in the respective KFS documents for each product.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cross-product-008",
+    "product_type": "Account",
+    "product_name": "Mashreq NEO Product Range",
+    "section": "Terms and Conditions",
+    "subsection": "Fees Subject to Change",
+    "content": "All fees, service charges, and interest rates for Mashreq NEO products are subject to change. Per KFS: 'Service, fees and interest rates may change. For updated fees/charges, you may visit mashreq.com/soc.' Customers should always verify current rates via the official Schedule of Charges at mashreq.com/soc.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cross-product-009",
+    "product_type": "Account",
+    "product_name": "Mashreq NEO Product Range",
+    "section": "Eligibility",
+    "subsection": "Residency — All Products",
+    "content": "All Mashreq NEO products require UAE residency. Non-residents of the UAE are explicitly not permitted for: NEO Current Account, NEO Simple Account, NEO Savings Account, NEO PLUS Saver Account, and NEO NXT Account. This applies equally to debit and credit card products associated with these accounts.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cross-product-010",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq NEO Product Range",
+    "section": "Benefits",
+    "subsection": "Airport Lounge Access Comparison",
+    "content": "Airport lounge access across NEO credit cards: Mashreq Solitaire Credit Card: 1,000+ lounges worldwide; 12 complimentary visits/year (with at least 1 international transaction over USD 1/year); 2 visits/year if spend criteria not met. Mashreq Platinum Plus Credit Card: 4 complimentary visits/year (requires AED 7,000+ monthly spend in previous billing cycle). Mashreq Cashback Credit Card: no airport lounge access. Mashreq noon Credit Card: no airport lounge access. Neither NEO Debit Card nor noon Debit Card includes airport lounge access.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cross-product-011",
+    "product_type": "Account",
+    "product_name": "Mashreq NEO Product Range",
+    "section": "Account Features",
+    "subsection": "Which Accounts Include a Debit Card",
+    "content": "Mashreq NEO accounts that include a debit card: NEO Current Account: free Visa Debit Card (mandatory at opening). NEO Savings Account: free Visa Debit Card. NEO Simple Account: free Visa Debit Card (mandatory). NEO NXT Account: free Visa Debit Card (mandatory, issued to child). Mashreq noon Savings Account: includes Mashreq noon Debit Card (Visa). NEO PLUS Saver Account: no debit card issued.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cross-product-012",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq NEO Product Range",
+    "section": "Rewards",
+    "subsection": "Vantage Points Products",
+    "content": "Mashreq Vantage Points are earned on two NEO credit cards: Mashreq Solitaire Credit Card (up to 6 points per AED on international) and Mashreq Platinum Plus Credit Card (up to 10 points per AED on supermarket, fuel, and dining). Points can be redeemed for airmiles, gift cards, or cashback via the Mashreq Mobile App. The Cashback and noon credit cards earn cashback instead of Vantage Points. The NEO Debit Card no longer earns Vantage Points — the program was discontinued effective 1 September 2024.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cross-product-013",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq NEO Product Range",
+    "section": "Promotions and Bonuses",
+    "subsection": "Welcome Bonuses Comparison",
+    "content": "Welcome bonuses for NEO credit cards (new customers, spend threshold in first 2 months): Mashreq Solitaire Credit Card: AED 2,500 (spend AED 9,000+). Mashreq Platinum Plus Credit Card: AED 750 (spend AED 5,000+). Mashreq Cashback Credit Card: AED 500 (spend AED 5,000+). Mashreq noon Credit Card: AED 500 (spend AED 5,000+). Existing customer welcome bonuses: Solitaire: AED 500. Platinum Plus: AED 200. Cashback: AED 100. noon: AED 100.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cross-product-014",
+    "product_type": "Account",
+    "product_name": "Mashreq NEO Product Range",
+    "section": "Product Overview",
+    "subsection": "Account Suitable for Children",
+    "content": "The NEO NXT Account is the only Mashreq NEO account specifically designed for children. It is suitable for children aged 8 to 18 years. It includes a dedicated Visa Debit Card for the child, parental controls, spending limits, and a personalized mobile app experience. The parent or guardian must be an existing Mashreq customer and a UAE resident. The child must have a valid Emirates ID. A 16-year-old can open a NEO NXT Account. There is no minimum balance and the account is entirely free of charges.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cross-product-015",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq NEO Product Range",
+    "section": "Credit Card Features",
+    "subsection": "Common Credit Card Charges",
+    "content": "Charges common to all four Mashreq NEO credit cards (Solitaire, Platinum Plus, Cashback, noon): Interest Rate: 3.85% per month / 46.20% per annum. Interest-Free Period: up to 57 days. Late Payment Fee: AED 241.50 (inclusive of VAT). Cash Advance Fee: 3.15% or AED 210, whichever is higher. Card Replacement Fee: AED 78.80. Over-Limit Fee: AED 303.45. Foreign Transaction Spread: 2.89%. PayProtect: approximately 0.99% of monthly statement balance plus 5% VAT (KFS states 1.04% inclusive of VAT). Minimum Monthly Payment: 5% of monthly statement balance.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cross-product-016",
+    "product_type": "Credit Card",
+    "product_name": "Mashreq NEO Product Range",
+    "section": "Eligibility",
+    "subsection": "Age Requirements — Credit Cards",
+    "content": "All four Mashreq NEO credit cards (Solitaire, Platinum Plus, Cashback, noon) require applicants to be 18 years of age or above. Minors cannot apply for any NEO credit card. There is no upper age limit stated.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  },
+  {
+    "chunk_id": "cross-product-017",
+    "product_type": "Account",
+    "product_name": "Mashreq NEO Product Range",
+    "section": "Eligibility",
+    "subsection": "Digital Onboarding",
+    "content": "All Mashreq NEO accounts can be opened digitally without a branch visit. The NEO Current Account, NEO Savings Account, and NEO Simple Account can be opened via the Mashreq Mobile App in approximately 2 minutes using Emirates ID scan and a selfie. The NEO PLUS Saver Account is opened in-app by existing NEO customers only. The NEO NXT Account is opened by the parent through the app. Mashreq is a branchless, digital-first banking model.",
+    "source_document": "Mashreq_NEO_UAE_Product_Discovery_Report.md"
+  }
+]
