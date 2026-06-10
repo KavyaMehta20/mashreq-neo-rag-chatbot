@@ -1,5 +1,5 @@
 """
-main.py  —  Mashreq NEO RAG API (Gemini free tier)
+main.py  —  Mashreq NEO RAG API (Gemini free tier) - Updated 5
 Run: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 """
 
@@ -14,17 +14,20 @@ from typing import Optional
 import google.generativeai as genai
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict, Field
 
 from prompt_builder import build_rag_prompt
 from retriever import MashreqRetriever, RetrievedChunk
+from query_analyzer import analyze_query, detect_product_name_hint
 from dotenv import load_dotenv
-load_dotenv()
+load_dotenv(override=True)
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
 
-GEMINI_MODEL    = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+GEMINI_MODEL    = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
 DEFAULT_TOP_K   = int(os.getenv("DEFAULT_TOP_K", "5"))
 MAX_CHUNKS      = int(os.getenv("MAX_CONTEXT_CHUNKS", "5"))
 MAX_TOKENS      = int(os.getenv("MAX_TOKENS", "1024"))
@@ -58,6 +61,12 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"]
 )
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+@app.get("/")
+async def serve_ui():
+    return FileResponse("static/index.html")
 
 
 # ── Schemas ────────────────────────────────────────────────────────────────
@@ -99,6 +108,50 @@ class QueryResponse(BaseModel):
     model_used: str
     latency_ms: float
     chunks_retrieved: int
+
+
+# ── Context-aware retrieval helpers ──────────────────────────────────────
+
+# Pronoun/vague words that signal a follow-up referring to a prior product
+_FOLLOWUP_SIGNALS = (
+    " that", " it", " this", " those", " them", " the account", " the card",
+    "do i get", "does it", "what about", "tell me more", "more about",
+    "what are its", "what are the",
+)
+
+
+def _extract_product_from_history(conversation_context: str) -> Optional[str]:
+    """Scan conversation history lines (newest first) for a recognisable product name."""
+    if not conversation_context:
+        return None
+    for line in reversed(conversation_context.strip().split("\n")):
+        product = detect_product_name_hint(line)
+        if product:
+            return product
+    return None
+
+
+def _enrich_query_with_context(
+    question: str,
+    conversation_context: Optional[str],
+) -> str:
+    """
+    If the question looks like a vague pronoun follow-up AND the conversation
+    history mentions a specific product, append that product name to the search
+    query so ChromaDB retrieves the right chunks.
+    """
+    lower = question.lower()
+    is_followup = any(sig in lower for sig in _FOLLOWUP_SIGNALS)
+    current_intent = analyze_query(question)
+    has_product_already = bool(current_intent.product_name_hint or current_intent.product_type_hint)
+
+    if is_followup and not has_product_already:
+        context_product = _extract_product_from_history(conversation_context)
+        if context_product:
+            enriched = f"{question} {context_product}"
+            logger.info("Follow-up detected — enriching query with context product: '%s'", context_product)
+            return enriched
+    return question
 
 
 # ── LLM call ───────────────────────────────────────────────────────────────
@@ -148,8 +201,13 @@ async def query(request: QueryRequest):
     t0 = time.perf_counter()
     retriever: MashreqRetriever = app_state["retriever"]
 
+    # Enrich vague follow-up questions with product context from history
+    retrieval_query = _enrich_query_with_context(
+        request.question, request.conversation_context
+    )
+
     chunks = retriever.retrieve(
-        query=request.question,
+        query=retrieval_query,
         top_k=request.top_k,
         product_type_filter=request.product_type_filter,
         product_name_filter=request.product_name_filter,

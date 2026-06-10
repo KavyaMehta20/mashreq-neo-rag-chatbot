@@ -1,6 +1,7 @@
 """
 vector_store.py
-Loads embedded_chunks.json and inserts all chunks into a ChromaDB persistent collection.
+Loads embedded_chunks.json and inserts all chunks into a ChromaDB persistent collection
+with full recommendation metadata for filterable hybrid retrieval.
 """
 
 import json
@@ -10,6 +11,8 @@ from pathlib import Path
 import chromadb
 from chromadb.config import Settings
 
+from metadata_extractor import metadata_for_chroma
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logger = logging.getLogger(__name__)
 
@@ -17,8 +20,7 @@ EMBEDDED_CHUNKS_PATH = Path("data/embedded_chunks.json")
 CHROMA_PERSIST_DIR = "./chroma_db"
 COLLECTION_NAME = "mashreq_neo_knowledge_base"
 
-# Fields to store as filterable metadata (exclude raw embedding and long content)
-METADATA_FIELDS = [
+BASE_METADATA_FIELDS = [
     "product_type",
     "product_name",
     "section",
@@ -28,13 +30,36 @@ METADATA_FIELDS = [
     "embedding_dim",
 ]
 
+RECOMMENDATION_METADATA_FIELDS = [
+    "minimum_age",
+    "maximum_age",
+    "minimum_income",
+    "benefit_score",
+    "reward_score",
+    "cashback_score",
+    "travel_score",
+    "teen_product",
+    "adult_product",
+    "investment_product",
+    "resident_required",
+    "guardian_required",
+    "maximum_income",
+]
+
 
 def build_metadata(chunk: dict) -> dict:
     """Extract a flat metadata dict from a chunk (ChromaDB only accepts str/int/float/bool)."""
     meta = {}
-    for field in METADATA_FIELDS:
+    for field in BASE_METADATA_FIELDS:
         value = chunk.get(field, "")
         meta[field] = value if value is not None else ""
+
+    rec_meta = chunk.get("recommendation_metadata", {})
+    if rec_meta:
+        meta.update(metadata_for_chroma(rec_meta))
+    else:
+        meta.update(metadata_for_chroma({}))
+
     return meta
 
 
@@ -50,7 +75,6 @@ def main():
         settings=Settings(anonymized_telemetry=False),
     )
 
-    # Delete existing collection if it exists (idempotent re-run)
     existing = [c.name for c in client.list_collections()]
     if COLLECTION_NAME in existing:
         logger.warning("Collection '%s' already exists — deleting and recreating.", COLLECTION_NAME)
@@ -58,11 +82,10 @@ def main():
 
     collection = client.create_collection(
         name=COLLECTION_NAME,
-        metadata={"hnsw:space": "cosine"},   # cosine distance for normalised embeddings
+        metadata={"hnsw:space": "cosine"},
     )
     logger.info("Created collection: %s", COLLECTION_NAME)
 
-    # Batch insert in groups of 100 to respect ChromaDB limits
     BATCH_SIZE = 100
     ids, embeddings, metadatas, documents = [], [], [], []
 
@@ -70,7 +93,7 @@ def main():
         ids.append(chunk["chunk_id"])
         embeddings.append(chunk["embedding"])
         metadatas.append(build_metadata(chunk))
-        documents.append(chunk["content"])
+        documents.append(chunk.get("content", ""))
 
     total = len(ids)
     for start in range(0, total, BATCH_SIZE):
@@ -83,7 +106,11 @@ def main():
         )
         logger.info("Inserted batch %d–%d / %d", start + 1, end, total)
 
-    logger.info("Vector store populated. Collection '%s' contains %d documents.", COLLECTION_NAME, collection.count())
+    logger.info(
+        "Vector store populated. Collection '%s' contains %d documents.",
+        COLLECTION_NAME,
+        collection.count(),
+    )
 
 
 if __name__ == "__main__":
