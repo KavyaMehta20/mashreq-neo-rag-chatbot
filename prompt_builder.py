@@ -16,7 +16,9 @@ class RAGPrompt:
     messages: list[dict]   # ready-to-send format for Anthropic / OpenAI APIs
 
 
-SYSTEM_PROMPT = """You are a knowledgeable and professional Mashreq Bank assistant specialising in Mashreq NEO banking products, including accounts, debit cards, credit cards, and Key Facts Statements (KFS).
+SYSTEM_PROMPT = """You are the Mashreq NEO Assistant. When users ask who you are or when you first introduce yourself, always start with: "Hello! I'm the Mashreq NEO Assistant." 
+
+You are a knowledgeable and professional assistant specialising in Mashreq NEO banking products, including accounts, debit cards, credit cards, and Key Facts Statements (KFS).
 
 Your responsibilities:
 1. Answer customer questions accurately using ONLY the context provided below.
@@ -28,6 +30,17 @@ Your responsibilities:
 6. For regulatory or legal questions, direct customers to Mashreqbank PSC directly.
 7. All products are regulated by the Central Bank of the United Arab Emirates."""
 
+# --- Decomposition Prompt Components ---
+DECOMPOSITION_SYSTEM_PROMPT = """You are a helpful assistant that decomposes complex user questions into a list of simpler, independent sub-questions. Your goal is to break down a user's query into its constituent parts so that each part can be answered separately. Respond ONLY with a JSON array of strings, where each string is a sub-question. Do not include any explanations, introductions, or extraneous text. If the original question is simple and does not require decomposition, return a JSON array containing only the original question."""
+
+def build_decomposition_prompt(question: str) -> str:
+    """
+    Constructs the prompt for decomposing a user question.
+    """
+    return f"""Decompose the following question into a list of simpler sub-questions. The output must be a JSON array of strings.
+
+User Question: {question}"""
+# --- End Decomposition Prompt Components ---
 
 def build_context_block(chunks: list[RetrievedChunk], max_chunks: int = 5) -> str:
     """
@@ -35,7 +48,7 @@ def build_context_block(chunks: list[RetrievedChunk], max_chunks: int = 5) -> st
     Includes chunk metadata as structured labels so the LLM can cite sources.
     """
     top_chunks = chunks[:max_chunks]
-    lines = ["### RETRIEVED CONTEXT\n"]
+    lines = ["### RETRIEVED CONTEXT"]
 
     for i, chunk in enumerate(top_chunks, 1):
         lines.append(f"--- Context [{i}] ---")
@@ -51,8 +64,7 @@ def build_context_block(chunks: list[RetrievedChunk], max_chunks: int = 5) -> st
         lines.append(chunk.text)
         lines.append("")
 
-    return "\n".join(lines)
-
+    return "".join(lines)
 
 def build_user_prompt(
     question: str,
@@ -80,8 +92,7 @@ def build_user_prompt(
         "say so and suggest where the customer can find the information."
     )
 
-    return "\n".join(parts)
-
+    return "".join(parts)
 
 def build_rag_prompt(
     question: str,
@@ -96,7 +107,7 @@ def build_rag_prompt(
     Args:
         question: The user's natural language question.
         chunks: Retrieved chunks from the vector store.
-        max_chunks: Maximum number of context chunks to include.
+        max_chunks: int = 5,
         conversation_context: Optional prior conversation turns as a string.
 
     Returns:
@@ -134,6 +145,6 @@ if __name__ == "__main__":
     print("SYSTEM PROMPT:")
     print("-" * 60)
     print(rag_prompt.system_prompt)
-    print("\nUSER PROMPT:")
+    print("USER PROMPT:")
     print("-" * 60)
     print(rag_prompt.user_prompt[:2000], "...")

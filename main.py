@@ -7,6 +7,7 @@ import json
 import logging
 import os
 import time
+import requests
 from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Optional
@@ -17,8 +18,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict, Field
+from google.api_core import exceptions as google_exceptions
 
-from prompt_builder import build_rag_prompt
+from prompt_builder import build_rag_prompt, build_decomposition_prompt, DECOMPOSITION_SYSTEM_PROMPT
 from retriever import MashreqRetriever, RetrievedChunk
 from query_analyzer import analyze_query, detect_product_name_hint
 from dotenv import load_dotenv
@@ -73,6 +75,7 @@ async def serve_ui():
 
 class QueryRequest(BaseModel):
     model_config = ConfigDict(
+        protected_namespaces=(),
         json_schema_extra={
             "examples": [
                 {
@@ -83,7 +86,7 @@ class QueryRequest(BaseModel):
         }
     )
 
-    question: str = Field(..., min_length=3, max_length=2000)
+    question: str = Field(..., min_length=1, max_length=2000)
     top_k: int = Field(DEFAULT_TOP_K, ge=1, le=20)
     product_type_filter: Optional[str] = None
     product_name_filter: Optional[str] = None
@@ -102,6 +105,8 @@ class SourceChunk(BaseModel):
 
 
 class QueryResponse(BaseModel):
+    model_config = ConfigDict(protected_namespaces=())
+
     question: str
     answer: str
     sources: list[SourceChunk]
@@ -167,6 +172,29 @@ def call_gemini(system_prompt: str, user_prompt: str) -> str:
     return response.text
 
 
+def call_ollama(system_prompt: str, user_prompt: str) -> str:
+    """Call local Ollama API."""
+    try:
+        response = requests.post(
+            "http://localhost:11434/api/generate",
+            json={
+                "model": OLLAMA_MODEL,
+                "prompt": f"{system_prompt}\n\n{user_prompt}",
+                "stream": False,
+                "options": {"num_predict": MAX_TOKENS},
+            },
+            timeout=120,
+        )
+        response.raise_for_status()
+        return response.json().get("response", "No response from Ollama.")
+    except requests.exceptions.RequestException as e:
+        logger.error("Ollama HTTP error: %s", e)
+        raise RuntimeError(f"Ollama connection error: {e}")
+    except Exception as e:
+        logger.error("Unexpected Ollama error: %s", e)
+        raise RuntimeError(f"Ollama unexpected error: {e}")
+
+
 def chunks_to_sources(chunks: list[RetrievedChunk]) -> list[SourceChunk]:
     return [
         SourceChunk(
@@ -201,20 +229,49 @@ async def query(request: QueryRequest):
     t0 = time.perf_counter()
     retriever: MashreqRetriever = app_state["retriever"]
 
-    # Enrich vague follow-up questions with product context from history
-    retrieval_query = _enrich_query_with_context(
-        request.question, request.conversation_context
-    )
+    # 1. Decompose the question into sub-queries
+    sub_queries = [request.question]
+    try:
+        logger.info("Decomposing query: %s", request.question)
+        decomp_prompt = build_decomposition_prompt(request.question)
+        # We use the system prompt to enforce JSON output
+        decomp_response = call_gemini(DECOMPOSITION_SYSTEM_PROMPT, decomp_prompt)
+        
+        # Clean up potential markdown code blocks from LLM response
+        clean_response = decomp_response.strip().replace("```json", "").replace("```", "").strip()
+        sub_queries = json.loads(clean_response)
+        if not isinstance(sub_queries, list):
+            sub_queries = [request.question]
+        logger.info("Decomposed into: %s", sub_queries)
+    except Exception as e:
+        logger.warning("Query decomposition failed: %s. Falling back to original question.", e)
+        sub_queries = [request.question]
 
-    chunks = retriever.retrieve(
-        query=retrieval_query,
-        top_k=request.top_k,
-        product_type_filter=request.product_type_filter,
-        product_name_filter=request.product_name_filter,
-        section_filter=request.section_filter,
-    )
+    # 2. Perform multi-query retrieval
+    all_retrieved_chunks = []
+    seen_chunk_ids = set()
 
-    if not chunks:
+    for sq in sub_queries:
+        # Enrich each sub-query with context if it's a follow-up
+        enriched_sq = _enrich_query_with_context(sq, request.conversation_context)
+        
+        chunks = retriever.retrieve(
+            query=enriched_sq,
+            top_k=request.top_k,
+            product_type_filter=request.product_type_filter,
+            product_name_filter=request.product_name_filter,
+            section_filter=request.section_filter,
+        )
+
+        for c in chunks:
+            if c.chunk_id not in seen_chunk_ids:
+                all_retrieved_chunks.append(c)
+                seen_chunk_ids.add(c.chunk_id)
+
+    # Sort all chunks by score descending
+    all_retrieved_chunks.sort(key=lambda x: x.score, reverse=True)
+
+    if not all_retrieved_chunks:
         return QueryResponse(
             question=request.question,
             answer="I could not find relevant information. Please visit mashreq.com or contact Mashreq support.",
@@ -224,24 +281,45 @@ async def query(request: QueryRequest):
             chunks_retrieved=0,
         )
 
+    # 3. Build RAG prompt with the consolidated chunks
     rag_prompt = build_rag_prompt(
         question=request.question,
-        chunks=chunks,
+        chunks=all_retrieved_chunks,
         max_chunks=MAX_CHUNKS,
         conversation_context=request.conversation_context,
     )
 
-    answer = call_gemini(rag_prompt.system_prompt, rag_prompt.user_prompt)
+    # 4. Generate final answer
+    try:
+        answer = call_gemini(rag_prompt.system_prompt, rag_prompt.user_prompt)
+    except google_exceptions.ResourceExhausted:
+        logger.error("Gemini API quota exceeded (ResourceExhausted). Attempting Ollama fallback...")
+        try:
+            answer = call_ollama(rag_prompt.system_prompt, rag_prompt.user_prompt)
+        except Exception as ollama_err:
+            logger.error("Ollama fallback also failed: %s", ollama_err)
+            return QueryResponse(
+                question=request.question,
+                answer="I'm sorry, I've reached my API limits and my local backup is unavailable. Please try again later.",
+                sources=chunks_to_sources(all_retrieved_chunks),
+                model_used="none",
+                latency_ms=round((time.perf_counter() - t0) * 1000, 2),
+                chunks_retrieved=len(all_retrieved_chunks),
+            )
+    except Exception as e:
+        logger.exception("Unexpected error during LLM call")
+        raise HTTPException(status_code=500, detail=str(e))
+
     latency = round((time.perf_counter() - t0) * 1000, 2)
     logger.info("Answered in %.0f ms", latency)
 
     return QueryResponse(
         question=request.question,
         answer=answer,
-        sources=chunks_to_sources(chunks),
+        sources=chunks_to_sources(all_retrieved_chunks),
         model_used=GEMINI_MODEL,
         latency_ms=latency,
-        chunks_retrieved=len(chunks),
+        chunks_retrieved=len(all_retrieved_chunks),
     )
 
 
@@ -251,3 +329,4 @@ async def products():
     if not meta.exists():
         raise HTTPException(404, "metadata.json not found")
     return json.loads(meta.read_text())
+
