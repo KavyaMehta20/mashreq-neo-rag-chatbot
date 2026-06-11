@@ -30,6 +30,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 GEMINI_MODEL    = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+OLLAMA_MODEL    = os.getenv("OLLAMA_MODEL", "llama3")
 DEFAULT_TOP_K   = int(os.getenv("DEFAULT_TOP_K", "5"))
 MAX_CHUNKS      = int(os.getenv("MAX_CONTEXT_CHUNKS", "5"))
 MAX_TOKENS      = int(os.getenv("MAX_TOKENS", "1024"))
@@ -69,6 +70,17 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 @app.get("/")
 async def serve_ui():
     return FileResponse("static/index.html")
+
+
+@app.get("/source/{filename}")
+async def serve_source(filename: str):
+    if filename != "productreport.md":
+        raise HTTPException(status_code=404, detail="Source not found")
+
+    source_path = Path("productreport.md")
+    if not source_path.exists():
+        raise HTTPException(status_code=404, detail="Source file missing")
+    return FileResponse(source_path)
 
 
 # ── Schemas ────────────────────────────────────────────────────────────────
@@ -210,7 +222,116 @@ def chunks_to_sources(chunks: list[RetrievedChunk]) -> list[SourceChunk]:
     ]
 
 
+def append_product_pdfs(question: str, answer: str, chunks: list[RetrievedChunk]) -> str:
+    # If the answer indicates no info was found, we do not append links
+    if "could not find" in answer.lower() or "sorry" in answer.lower():
+        return answer
+
+    PRODUCT_MAPPING = {
+        "NEO Current Account": {
+            "url": "https://www.mashreq.com/-/jssmedia/pdfs/neo/accounts-deposits/Neo-Current-Account-KFS.ashx",
+            "keywords": ["neo current account", "neo current", "current account"],
+            "chunk_names": ["NEO Current Account", "NEO Current Account KFS"]
+        },
+        "NEO Simple Account": {
+            "url": "https://www.mashreq.com/-/jssmedia/pdfs/neo/accounts-deposits/Neo-Simple-Account-EN-KFS.ashx",
+            "keywords": ["neo simple account", "neo simple", "simple account"],
+            "chunk_names": ["NEO Simple Account", "NEO Simple Account KFS"]
+        },
+        "NEO PLUS Saver Account": {
+            "url": "https://www.mashreq.com/-/jssmedia/pdfs/neo/accounts-deposits/KFS/2025/neo-plus-saver-account-kfs-en-ar.ashx",
+            "keywords": ["neo plus saver", "plus saver", "neo plus"],
+            "chunk_names": ["NEO PLUS Saver Account"]
+        },
+        "NEO Savings Account": {
+            "url": "https://www.mashreq.com/-/jssmedia/pdfs/neo/accounts-deposits/KFS/2026/mashreq-unified-casa-products-kfs.ashx",
+            "keywords": ["neo savings account", "neo savings"],
+            "chunk_names": ["NEO Savings Account"]
+        },
+        "NEO NXT Account": {
+            "url": "https://www.mashreq.com/-/jssmedia/pdfs/neo/accounts-deposits/KFS/KFS-Neo-NXT-Digital-Account-en-ar.ashx",
+            "keywords": ["neo nxt", "nxt account", "nxt generation"],
+            "chunk_names": ["NEO NXT Account", "NEO NXT Digital Account KFS"]
+        },
+        "NEO Debit Card": {
+            "url": "https://www.mashreq.com/-/jssmedia/pdfs/neo/accounts-deposits/Neo-Current-Account-KFS.ashx",
+            "keywords": ["neo debit card", "neo debit"],
+            "chunk_names": ["NEO Debit Card"]
+        },
+        "Mashreq noon Savings Account": {
+            "url": "https://www.mashreq.com/-/jssmedia/pdfs/neo/accounts-deposits/Mashreq_noon_VIP_Savings_Interest_Rates-EN-AR.ashx",
+            "keywords": ["noon savings", "noon savings account", "noon saving"],
+            "chunk_names": ["Mashreq noon Savings Account"]
+        },
+        "Mashreq Solitaire Credit Card": {
+            "url": "https://www.mashreq.com/-/jssmedia/pdfs/neo/cards/KFS-TnC/Mashreq-Cards-KFS-new-en-ar.ashx",
+            "keywords": ["solitaire credit card", "solitaire card", "solitaire"],
+            "chunk_names": ["Mashreq Solitaire Credit Card"]
+        },
+        "Mashreq Platinum Plus Credit Card": {
+            "url": "https://www.mashreq.com/-/jssmedia/pdfs/neo/cards/KFS-TnC/Mashreq-Cards-KFS-new-en-ar.ashx",
+            "keywords": ["platinum plus credit card", "platinum plus card", "platinum plus"],
+            "chunk_names": ["Mashreq Platinum Plus Credit Card"]
+        },
+        "Mashreq Cashback Credit Card": {
+            "url": "https://www.mashreq.com/-/jssmedia/pdfs/neo/cards/KFS-TnC/Mashreq-Cards-KFS-new-en-ar.ashx",
+            "keywords": ["cashback credit card", "cashback card", "cashback credit", "cashback"],
+            "chunk_names": ["Mashreq Cashback Credit Card"]
+        },
+        "Mashreq noon Credit Card": {
+            "url": "https://www.mashreq.com/-/jssmedia/pdfs/neo/cards/noon/Mahreq_noon_Credit_Card_Terms_and_Conditions_en.ashx",
+            "keywords": ["noon credit card", "noon card", "noon credit"],
+            "chunk_names": ["Mashreq noon Credit Card"]
+        }
+    }
+
+    question_lower = question.lower()
+    answer_lower = answer.lower()
+    
+    top_chunks = chunks[:MAX_CHUNKS]
+    retrieved_product_names = {c.product_name for c in top_chunks}
+    
+    matched_products = []
+    
+    for product_name, info in PRODUCT_MAPPING.items():
+        chunk_match = any(cn in retrieved_product_names for cn in info["chunk_names"])
+        
+        kw_match_q = any(kw in question_lower for kw in info["keywords"])
+        kw_match_a = any(kw in answer_lower for kw in info["keywords"])
+        
+        if (chunk_match and (kw_match_q or kw_match_a)) or (kw_match_q and kw_match_a):
+            matched_products.append((product_name, info["url"]))
+            
+    # Fallback for single product context/follow-up when no keywords matched:
+    if not matched_products and len(retrieved_product_names) == 1:
+        single_name = list(retrieved_product_names)[0]
+        for product_name, info in PRODUCT_MAPPING.items():
+            if single_name in info["chunk_names"]:
+                matched_products.append((product_name, info["url"]))
+                break
+
+    if not matched_products:
+        return answer
+
+    seen_urls = set()
+    unique_links = []
+    for prod_name, url in matched_products:
+        if url not in seen_urls:
+            seen_urls.add(url)
+            unique_links.append(url)
+            
+    if not unique_links:
+        return answer
+
+    if len(unique_links) == 1:
+        link_block = "\n\nRelevant PDF:\n" + unique_links[0]
+    else:
+        link_block = "\n\nRelevant PDFs:\n" + "\n".join(unique_links)
+    return answer + link_block
+
+
 # ── Endpoints ──────────────────────────────────────────────────────────────
+
 
 @app.get("/health")
 async def health():
@@ -313,14 +434,17 @@ async def query(request: QueryRequest):
     latency = round((time.perf_counter() - t0) * 1000, 2)
     logger.info("Answered in %.0f ms", latency)
 
+    final_answer = append_product_pdfs(request.question, answer, all_retrieved_chunks)
+
     return QueryResponse(
         question=request.question,
-        answer=answer,
+        answer=final_answer,
         sources=chunks_to_sources(all_retrieved_chunks),
         model_used=GEMINI_MODEL,
         latency_ms=latency,
         chunks_retrieved=len(all_retrieved_chunks),
     )
+
 
 
 @app.get("/products")

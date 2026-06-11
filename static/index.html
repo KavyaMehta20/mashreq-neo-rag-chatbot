@@ -3,39 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mashreq Neo Chatbot</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Mashreq NEO Banking Assistant</title>
+    <meta name="description" content="Mashreq NEO AI-powered banking assistant — ask about accounts, cards, and more.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div class="chat-container">
-        <header class="chat-header">
-            <div class="header-content">
-                <h1>MASHREQ NEO CHATBOT</h1>
-                <p>Your AI Banking Assistant</p>
-            </div>
-        </header>
-        
-        <main class="chat-box" id="chat-box">
-            <div class="message system-message">
-                <div class="message-bubble">
-                    Hello! I'm the Mashreq NEO Assistant. How can I help you today?
+
+    <!-- ══════════════════════════════════════════════════════════════
+         APP SHELL — 2-panel layout
+         ══════════════════════════════════════════════════════════════ -->
+    <div class="app-shell">
+
+        <!-- ── PANEL A: File Explorer Sidebar ────────────────────── -->
+        <aside class="sidebar" aria-label="Product document library">
+            <div class="sidebar-inner">
+
+                <!-- Brand mark -->
+                <div class="sidebar-brand">
+                    <div class="brand-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <span class="brand-label">NEO Docs</span>
+                </div>
+
+                <div class="sidebar-divider"></div>
+
+                <p class="sidebar-section-label">Product Library</p>
+
+                <!-- Navigation tree -->
+                <nav class="pdf-navigation" aria-label="Document categories">
+
+                    <!-- Accounts -->
+                    <div class="category-group">
+                        <button class="category-header" onclick="toggleCategory('accounts-list', this)" aria-expanded="false" aria-controls="accounts-list">
+                            <span class="category-toggle-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                            </span>
+                            <span class="category-icon">🏦</span>
+                            <span class="category-title">Accounts</span>
+                        </button>
+                        <ul id="accounts-list" class="pdf-list collapsed" role="list">
+                            <li class="pdf-item" role="listitem" onclick="openFileModal('/static/pdfs/neo-current-account.pdf', 'NEO Current Account')">
+                                <span class="pdf-icon">📄</span><span class="pdf-name">NEO Current Account</span>
+                            </li>
+                            <li class="pdf-item" role="listitem" onclick="openFileModal('/static/pdfs/neo-simple-account.pdf', 'NEO Simple Account')">
+                                <span class="pdf-icon">📄</span><span class="pdf-name">NEO Simple Account</span>
+                            </li>
+                            <li class="pdf-item" role="listitem" onclick="openFileModal('/static/pdfs/neo-plus-saver-account.pdf', 'NEO Plus Saver Account')">
+                                <span class="pdf-icon">📄</span><span class="pdf-name">NEO Plus Saver Account</span>
+                            </li>
+                            <li class="pdf-item" role="listitem" onclick="openFileModal('/static/pdfs/neo-savings-account.pdf', 'NEO Savings Account')">
+                                <span class="pdf-icon">📄</span><span class="pdf-name">NEO Savings Account</span>
+                            </li>
+                            <li class="pdf-item" role="listitem" onclick="openFileModal('/static/pdfs/neo-nxt-account.pdf', 'NEO NXT Account')">
+                                <span class="pdf-icon">📄</span><span class="pdf-name">NEO NXT Account</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Debit Cards -->
+                    <div class="category-group">
+                        <button class="category-header" onclick="toggleCategory('debit-cards-list', this)" aria-expanded="false" aria-controls="debit-cards-list">
+                            <span class="category-toggle-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                            </span>
+                            <span class="category-icon">💳</span>
+                            <span class="category-title">Debit Cards</span>
+                        </button>
+                        <ul id="debit-cards-list" class="pdf-list collapsed" role="list">
+                            <li class="pdf-item" role="listitem" onclick="openFileModal('/static/pdfs/neo-debit-card.pdf', 'NEO Debit Card')">
+                                <span class="pdf-icon">📄</span><span class="pdf-name">NEO Debit Card</span>
+                            </li>
+                            <li class="pdf-item" role="listitem" onclick="openFileModal('/static/pdfs/mashreq-noon-debit-card.pdf', 'Mashreq noon Debit Card')">
+                                <span class="pdf-icon">📄</span><span class="pdf-name">Mashreq noon Debit Card</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Credit Cards -->
+                    <div class="category-group">
+                        <button class="category-header" onclick="toggleCategory('credit-cards-list', this)" aria-expanded="false" aria-controls="credit-cards-list">
+                            <span class="category-toggle-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                            </span>
+                            <span class="category-icon">💎</span>
+                            <span class="category-title">Credit Cards</span>
+                        </button>
+                        <ul id="credit-cards-list" class="pdf-list collapsed" role="list">
+                            <li class="pdf-item" role="listitem" onclick="openFileModal('/static/pdfs/solitaire-credit-card.pdf', 'Mashreq Solitaire Credit Card')">
+                                <span class="pdf-icon">📄</span><span class="pdf-name">Mashreq Solitaire Credit Card</span>
+                            </li>
+                            <li class="pdf-item" role="listitem" onclick="openFileModal('/static/pdfs/platinum-plus-credit-card.pdf', 'Mashreq Platinum Plus Credit Card')">
+                                <span class="pdf-icon">📄</span><span class="pdf-name">Mashreq Platinum Plus Credit Card</span>
+                            </li>
+                            <li class="pdf-item" role="listitem" onclick="openFileModal('/static/pdfs/cashback-credit-card.pdf', 'Mashreq Cashback Credit Card')">
+                                <span class="pdf-icon">📄</span><span class="pdf-name">Mashreq Cashback Credit Card</span>
+                            </li>
+                            <li class="pdf-item" role="listitem" onclick="openFileModal('/static/pdfs/mashreq-noon-credit-card.pdf', 'Mashreq noon Credit Card')">
+                                <span class="pdf-icon">📄</span><span class="pdf-name">Mashreq noon Credit Card</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
+
+                <!-- Footer -->
+                <div class="sidebar-footer">
+                    <span class="sidebar-footer-text">Click any document to preview</span>
                 </div>
             </div>
+        </aside>
+
+        <!-- ── PANEL B: Chat Interface (primary) ─────────────────── -->
+        <main class="chat-panel">
+
+            <!-- Chat header -->
+            <header class="chat-header">
+                <div class="header-identity">
+                    <div class="header-avatar">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <div class="header-text">
+                        <h1>Mashreq NEO Assistant</h1>
+                        <p class="header-status">
+                            <span class="status-dot" aria-hidden="true"></span>
+                            Online · Powered by RAG
+                        </p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Messages -->
+            <section class="chat-box" id="chat-box" aria-live="polite" aria-label="Conversation">
+                <div class="message system-message">
+                    <div class="bot-avatar" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </div>
+                    <div class="message-bubble">
+                        <p>Hello! I'm your <strong>Mashreq NEO Banking Assistant</strong>. Ask me anything about accounts, debit cards, or credit cards.</p>
+                        <p class="welcome-hint">💡 Product references in my answers are clickable — they'll open the source document in a preview.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Input -->
+            <footer class="chat-input-area">
+                <form id="chat-form" autocomplete="off">
+                    <input
+                        type="text"
+                        id="user-input"
+                        placeholder="Ask about Mashreq NEO products, fees, benefits…"
+                        autocomplete="off"
+                        required
+                        aria-label="Type your message"
+                    >
+                    <button type="submit" id="send-btn" aria-label="Send message">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                        </svg>
+                    </button>
+                </form>
+            </footer>
+
         </main>
-        
-        <footer class="chat-input-area">
-            <form id="chat-form">
-                <input type="text" id="user-input" placeholder="Ask me about Mashreq NEO products..." autocomplete="off" required>
-                <button type="submit" id="send-btn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="22" y1="2" x2="11" y2="13"></line>
-                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         MODAL: PDF Document Viewer
+         ══════════════════════════════════════════════════════════════ -->
+    <div class="modal-overlay" id="file-modal" role="dialog" aria-modal="true" aria-labelledby="modal-file-name" aria-hidden="true">
+        <div class="modal-backdrop" id="modal-backdrop" onclick="closeFileModal()"></div>
+        <div class="modal-container" id="modal-container">
+            <!-- Modal header -->
+            <div class="modal-header">
+                <div class="modal-header-left">
+                    <svg class="modal-file-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
+                    </svg>
+                    <span class="modal-file-name" id="modal-file-name">Document</span>
+                </div>
+                <button class="modal-close-btn" id="modal-close-btn" onclick="closeFileModal()" aria-label="Close document preview">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
                     </svg>
                 </button>
-            </form>
-        </footer>
+            </div>
+            <!-- PDF iframe -->
+            <div class="modal-body">
+                <iframe id="modal-pdf-iframe" src="" title="Document preview" aria-label="PDF document viewer"></iframe>
+            </div>
+        </div>
     </div>
+
     <script src="/static/script.js"></script>
 </body>
 </html>
