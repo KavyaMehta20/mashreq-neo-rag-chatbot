@@ -799,3 +799,218 @@ body.modal-open {
     background: var(--border);
     border-radius: 4px;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DEVELOPER MODE TOGGLE
+   ═══════════════════════════════════════════════════════════════════════════ */
+.dev-mode-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    user-select: none;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 38px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #D1D5DB;
+    transition: .3s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .3s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(18px);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RETRIEVED CONTEXT & CHUNKS
+   ═══════════════════════════════════════════════════════════════════════════ */
+.retrieved-context-wrapper {
+    margin-top: 12px;
+    border-top: 1px solid var(--border-light);
+    padding-top: 10px;
+}
+
+.retrieved-context-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: var(--surface-raised);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    user-select: none;
+    transition: background var(--trans-fast), border-color var(--trans-fast);
+}
+
+.retrieved-context-header:hover {
+    background: var(--border-light);
+    border-color: var(--text-muted);
+}
+
+.retrieved-context-header .chevron {
+    width: 16px;
+    height: 16px;
+    stroke: var(--text-muted);
+    transition: transform var(--trans-med);
+}
+
+.retrieved-context-header.expanded .chevron {
+    transform: rotate(90deg);
+}
+
+.retrieved-context-content {
+    display: none;
+    margin-top: 8px;
+    flex-direction: column;
+    gap: 8px;
+    animation: slideDown 0.2s ease-out;
+}
+
+.retrieved-context-content.expanded {
+    display: flex;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chunk-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 12px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    transition: box-shadow var(--trans-fast), border-color var(--trans-fast);
+}
+
+.chunk-card:hover {
+    box-shadow: var(--shadow-sm);
+    border-color: var(--primary-light);
+}
+
+.chunk-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+.chunk-similarity {
+    color: var(--primary);
+    background: var(--primary-subtle);
+    padding: 2px 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 94, 0, 0.15);
+}
+
+.chunk-text {
+    font-style: italic;
+    color: var(--text-secondary);
+    white-space: pre-wrap;
+    background: var(--surface-raised);
+    padding: 8px 10px;
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--primary-light);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DEVELOPER MODE INFRASTRUCTURE
+   ═══════════════════════════════════════════════════════════════════════════ */
+.dev-mode-only {
+    display: none !important;
+}
+
+body.dev-mode-active .dev-mode-only {
+    display: block !important;
+}
+
+body.dev-mode-active .dev-mode-only-flex {
+    display: flex !important;
+}
+
+.dev-block {
+    background: #FAF5F2; /* subtle warm glow */
+    border: 1px dashed var(--primary-light);
+    border-radius: var(--radius-md);
+    padding: 10px 14px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.76rem;
+    color: #8C431D;
+    margin-top: 10px;
+}
+
+.dev-block-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.dev-block ul {
+    list-style-position: inside;
+    margin-left: 4px;
+    margin-top: 4px;
+}
+
+.dev-chunk-detail {
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px dashed rgba(255, 94, 0, 0.15);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}

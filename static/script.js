@@ -143,7 +143,7 @@ function escapeRegex(str) {
 }
 
 // ─── Chat UI Helpers ──────────────────────────────────────────────────────────
-function appendMessage(sender, text) {
+function appendMessage(sender, text, retrievedContext = [], subqueries = []) {
     const chatBox = document.getElementById('chat-box');
     const msgDiv  = document.createElement('div');
     msgDiv.className = `message ${sender}-message`;
@@ -171,6 +171,90 @@ function appendMessage(sender, text) {
     // Citation chips for bot messages
     if (sender === 'system') {
         injectCitations(bubble, text);
+
+        // Add Collapsible Retrieved Context if available
+        if (retrievedContext && retrievedContext.length > 0) {
+            const contextWrapper = document.createElement('div');
+            contextWrapper.className = 'retrieved-context-wrapper';
+
+            const contextHeader = document.createElement('div');
+            contextHeader.className = 'retrieved-context-header';
+            contextHeader.innerHTML = `
+                <span>Retrieved Context (${retrievedContext.length})</span>
+                <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"/>
+                </svg>
+            `;
+
+            const contextContent = document.createElement('div');
+            contextContent.className = 'retrieved-context-content';
+
+            // Add chunks
+            retrievedContext.forEach((chunk, index) => {
+                const card = document.createElement('div');
+                card.className = 'chunk-card';
+
+                const meta = document.createElement('div');
+                meta.className = 'chunk-meta';
+                meta.innerHTML = `
+                    <span>Chunk ${index + 1}</span>
+                    <span class="chunk-similarity">Similarity: ${chunk.similarity_score}</span>
+                `;
+
+                const textDiv = document.createElement('div');
+                textDiv.className = 'chunk-text';
+                textDiv.textContent = `"${chunk.text}"`;
+
+                card.appendChild(meta);
+                card.appendChild(textDiv);
+
+                // Developer Mode info for this chunk
+                const devDetail = document.createElement('div');
+                devDetail.className = 'dev-chunk-detail dev-mode-only';
+                devDetail.innerHTML = `
+                    <strong>Chunk ID:</strong> ${chunk.chunk_id || 'N/A'}<br>
+                    <strong>Chroma Score:</strong> ${chunk.vector_score || 'N/A'}<br>
+                    <strong>Rerank Score:</strong> ${chunk.rerank_score !== null && chunk.rerank_score !== undefined ? chunk.rerank_score : 'N/A'}
+                `;
+                card.appendChild(devDetail);
+
+                contextContent.appendChild(card);
+            });
+
+            // Developer Mode general info block
+            if (subqueries && subqueries.length > 0) {
+                const devBlock = document.createElement('div');
+                devBlock.className = 'dev-block dev-mode-only';
+                devBlock.innerHTML = `
+                    <div class="dev-block-title">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                        Developer Info
+                    </div>
+                    <div><strong>Decomposed Subqueries:</strong></div>
+                    <ul style="margin-left: 18px; margin-top: 4px;">
+                        ${subqueries.map(q => `<li>${q}</li>`).join('')}
+                    </ul>
+                    <div style="margin-top: 6px;"><strong>Final Ranking Order:</strong></div>
+                    <ol style="margin-left: 18px; margin-top: 4px;">
+                        ${retrievedContext.map((c, idx) => `<li>#${idx + 1} - ${c.chunk_id || 'N/A'} (Score: ${c.similarity_score})</li>`).join('')}
+                    </ol>
+                `;
+                contextContent.appendChild(devBlock);
+            }
+
+            // Toggling collapsible section
+            contextHeader.addEventListener('click', () => {
+                const isExpanded = contextContent.classList.toggle('expanded');
+                contextHeader.classList.toggle('expanded', isExpanded);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            });
+
+            contextWrapper.appendChild(contextHeader);
+            contextWrapper.appendChild(contextContent);
+            bubble.appendChild(contextWrapper);
+        }
     }
 
     msgDiv.appendChild(bubble);
@@ -213,6 +297,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatForm  = document.getElementById('chat-form');
     const userInput = document.getElementById('user-input');
 
+    // Developer Mode Toggle handler
+    const devModeToggle = document.getElementById('dev-mode-toggle');
+    if (devModeToggle) {
+        devModeToggle.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                document.body.classList.add('dev-mode-active');
+            } else {
+                document.body.classList.remove('dev-mode-active');
+            }
+        });
+    }
+
     // Conversation history — max 6 entries (3 turns)
     const conversationHistory = [];
     const MAX_HISTORY = 6;
@@ -250,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
             loadingEl.remove();
 
             if (res.ok) {
-                appendMessage('system', data.answer);
+                appendMessage('system', data.answer, data.retrieved_context, data.subqueries);
                 conversationHistory.push({ role: 'assistant', text: data.answer });
                 if (conversationHistory.length > MAX_HISTORY) conversationHistory.shift();
             } else {

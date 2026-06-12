@@ -116,6 +116,14 @@ class SourceChunk(BaseModel):
     text_snippet: str
 
 
+class RetrievedContextChunk(BaseModel):
+    text: str
+    similarity_score: float
+    vector_score: Optional[float] = None
+    rerank_score: Optional[float] = None
+    chunk_id: Optional[str] = None
+
+
 class QueryResponse(BaseModel):
     model_config = ConfigDict(protected_namespaces=())
 
@@ -125,6 +133,8 @@ class QueryResponse(BaseModel):
     model_used: str
     latency_ms: float
     chunks_retrieved: int
+    retrieved_context: list[RetrievedContextChunk] = []
+    subqueries: list[str] = []
 
 
 # ── Context-aware retrieval helpers ──────────────────────────────────────
@@ -400,6 +410,8 @@ async def query(request: QueryRequest):
             model_used=GEMINI_MODEL,
             latency_ms=round((time.perf_counter() - t0) * 1000, 2),
             chunks_retrieved=0,
+            retrieved_context=[],
+            subqueries=sub_queries,
         )
 
     # 3. Build RAG prompt with the consolidated chunks
@@ -426,6 +438,17 @@ async def query(request: QueryRequest):
                 model_used="none",
                 latency_ms=round((time.perf_counter() - t0) * 1000, 2),
                 chunks_retrieved=len(all_retrieved_chunks),
+                retrieved_context=[
+                    RetrievedContextChunk(
+                        text=c.text,
+                        similarity_score=round(c.score, 6),
+                        vector_score=round(c.vector_score, 6),
+                        rerank_score=round(c.rerank_score, 6) if c.rerank_score != 0.0 else None,
+                        chunk_id=c.chunk_id
+                    )
+                    for c in all_retrieved_chunks[:MAX_CHUNKS]
+                ],
+                subqueries=sub_queries,
             )
     except Exception as e:
         logger.exception("Unexpected error during LLM call")
@@ -436,6 +459,18 @@ async def query(request: QueryRequest):
 
     final_answer = append_product_pdfs(request.question, answer, all_retrieved_chunks)
 
+    final_chunks = all_retrieved_chunks[:MAX_CHUNKS]
+    retrieved_context_data = [
+        RetrievedContextChunk(
+            text=c.text,
+            similarity_score=round(c.score, 6),
+            vector_score=round(c.vector_score, 6),
+            rerank_score=round(c.rerank_score, 6) if c.rerank_score != 0.0 else None,
+            chunk_id=c.chunk_id
+        )
+        for c in final_chunks
+    ]
+
     return QueryResponse(
         question=request.question,
         answer=final_answer,
@@ -443,6 +478,8 @@ async def query(request: QueryRequest):
         model_used=GEMINI_MODEL,
         latency_ms=latency,
         chunks_retrieved=len(all_retrieved_chunks),
+        retrieved_context=retrieved_context_data,
+        subqueries=sub_queries,
     )
 
 
